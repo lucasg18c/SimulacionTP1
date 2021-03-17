@@ -52,19 +52,46 @@
     <Compile Include="Presentacion\FrmBase.Designer.cs">
       <DependentUpon>FrmBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\FrmJiCuadrado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmJiCuadrado.Designer.cs">
+      <DependentUpon>FrmJiCuadrado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\FrmNumerosAleatorios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmNumerosAleatorios.Designer.cs">
+      <DependentUpon>FrmNumerosAleatorios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FrmSmirnov.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FrmSmirnov.Designer.cs">
+      <DependentUpon>FrmSmirnov.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Presentacion\FrmBase.resx">
       <DependentUpon>FrmBase.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmJiCuadrado.resx">
+      <DependentUpon>FrmJiCuadrado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmNumerosAleatorios.resx">
+      <DependentUpon>FrmNumerosAleatorios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FrmSmirnov.resx">
+      <DependentUpon>FrmSmirnov.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

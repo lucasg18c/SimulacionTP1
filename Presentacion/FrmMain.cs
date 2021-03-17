@@ -16,5 +16,20 @@ namespace SimulacionTP1.Presentacion
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Abrir(new FrmNumerosAleatorios());
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Abrir(new FrmJiCuadrado());
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Abrir(new FrmSmirnov());
+        }
     }
 }

@@ -8,3 +8,7 @@ C:\Users\lucas\source\repos\SimulacionTP1\bin\Debug\SimulacionTP1.exe
 C:\Users\lucas\source\repos\SimulacionTP1\bin\Debug\SimulacionTP1.pdb
 C:\Users\lucas\source\repos\SimulacionTP1\obj\Debug\SimulacionTP1.exe
 C:\Users\lucas\source\repos\SimulacionTP1\obj\Debug\SimulacionTP1.pdb
+C:\Users\lucas\source\repos\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.FrmJiCuadrado.resources
+C:\Users\lucas\source\repos\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.FrmMain.resources
+C:\Users\lucas\source\repos\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.FrmNumerosAleatorios.resources
+C:\Users\lucas\source\repos\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.FrmSmirnov.resources

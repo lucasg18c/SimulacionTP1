@@ -1,6 +1,6 @@
 ﻿namespace SimulacionTP1.Presentacion
 {
-    partial class FrmBase
+    partial class FrmJiCuadrado
     {
         /// <summary>
         /// Required designer variable.
@@ -30,19 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // FrmBase
+            // FrmJiCuadrado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 361);
-            this.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.MaximizeBox = false;
-            this.Name = "FrmBase";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmBase";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmBase_FormClosing);
+            this.ClientSize = new System.Drawing.Size(471, 353);
+            this.Name = "FrmJiCuadrado";
+            this.Text = "FrmJiCuadrado";
             this.ResumeLayout(false);
 
         }
