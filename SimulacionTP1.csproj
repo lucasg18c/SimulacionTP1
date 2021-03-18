@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Presentacion\ControlesUsuario\NumTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Presentacion\FrmBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +81,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Servicios\GeneradorBase.cs" />
+    <Compile Include="Servicios\GeneradorLineal.cs" />
+    <Compile Include="Servicios\GeneradorMultiplicativo.cs" />
     <EmbeddedResource Include="Presentacion\FrmBase.resx">
       <DependentUpon>FrmBase.cs</DependentUpon>
     </EmbeddedResource>
@@ -115,8 +121,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Modelo\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
