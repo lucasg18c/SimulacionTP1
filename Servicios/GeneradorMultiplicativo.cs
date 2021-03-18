@@ -2,12 +2,17 @@
 {
     public class GeneradorMultiplicativo : GeneradorBase
     {
-        protected override int Calcular(int x, int a, int c)
+        protected override ulong Calcular(ulong x, ulong a, ulong c)
         {
             return a * x;
         }
 
-        protected override void ValidarC(int c)
+        public override string CalcularA(ulong k)
+        {
+            return (3 + 8 * k).ToString();
+        }
+
+        protected override void ValidarC(ulong c)
         {
             
         }

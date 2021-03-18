@@ -5,10 +5,10 @@ namespace SimulacionTP1.Servicios
     public abstract class GeneradorBase
     {
 
-        public double[] Generar(int semilla, int modulo, int a, int c)
+        public double[] Generar(ulong semilla, ulong modulo, ulong a, ulong c)
         {
             double[] nums = new double[20];
-            int xi = semilla;
+            ulong xi = semilla;
 
             for (int i = 0; i < nums.Length; i++)
             {
@@ -19,12 +19,12 @@ namespace SimulacionTP1.Servicios
             return nums;
         }
 
-        public double GenerarSiguiente(int x, int modulo, int a, int c)
+        public double GenerarSiguiente(ulong x, ulong modulo, ulong a, ulong c)
         {
             return (double) (Calcular(x, a, c) % modulo) / modulo;
         }
 
-        public void Validar(int x0, int m, int a, int c)
+        public void Validar(ulong x0, ulong m, ulong a, ulong c)
         {
             if (x0 <= 0) throw new ApplicationException("Valor de semilla inválido");
             if (m <= 0) throw new ApplicationException("Valor de módulo inválido");
@@ -32,7 +32,14 @@ namespace SimulacionTP1.Servicios
             ValidarC(c);
         }
 
-        protected abstract void ValidarC(int c);
-        protected abstract int Calcular(int x, int a, int c);
+        public string CalcularM(ulong g)
+        {
+            return Math.Pow(2, g).ToString();
+        }
+
+
+        protected abstract void ValidarC(ulong c);
+        protected abstract ulong Calcular(ulong x, ulong a, ulong c);
+        public abstract string CalcularA(ulong k);
     }
 }
