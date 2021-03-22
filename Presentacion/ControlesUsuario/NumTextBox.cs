@@ -31,7 +31,14 @@ namespace SimulacionTP1.Presentacion.ControlesUsuario
         private ulong valor()
         {
             if (Text.Length == 0) return 0;
-            return (ulong)Convert.ToInt64(Text);
+            try
+            {
+                return (ulong)Convert.ToInt64(Text);
+            }
+            catch (Exception)
+            {
+            }
+            return 0;
         }
     }
 }
