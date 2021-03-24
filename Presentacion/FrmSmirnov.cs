@@ -17,14 +17,15 @@ namespace SimulacionTP1.Presentacion
             double cantInt = double.Parse(txtCantidadInt.Text);
             dgvTabla.Rows.Clear();
             dgvIntervalos.Rows.Clear();
-            NumerosAleatorios(cantNum);
-            Intervalos(cantInt, cantNum);
-
             chart1.Series.Clear();
             chart1.Titles.Clear();
             chart1.Series.Add("Fo");
             chart1.Series.Add("Fe");
             chart1.Titles.Add("Histograma Kolmogorov-Smirnov");
+            NumerosAleatorios(cantNum);
+            Intervalos(cantInt, cantNum);
+
+            
 
         }
         public void NumerosAleatorios(double cantNum)
@@ -66,6 +67,9 @@ namespace SimulacionTP1.Presentacion
 
                 }
 
+                chart1.Series["Fo"].Points.AddXY(i2, count3);
+                chart1.Series["Fe"].Points.AddXY(i2, totalIntervalos);
+
                 acumPo = Math.Round(count3 / cantNum, 4) + acumPo;
                 acumPe = Math.Round((totalIntervalos / cantNum), 4) + acumPe;
                 double abs = Math.Round(Math.Abs(acumPo - acumPe), 4);
@@ -86,8 +90,7 @@ namespace SimulacionTP1.Presentacion
                 intervaloInferior = intervaloInferior + valorIntervalo;
                 intervaloSuperior = intervaloSuperior + valorIntervalo;
 
-                chart1.Series["Fo"].Points.AddXY(i2, count3);
-                chart1.Series["Fe"].Points.AddXY(i2, totalIntervalos);
+                
             }
 
 
@@ -146,5 +149,9 @@ namespace SimulacionTP1.Presentacion
 
         }
 
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

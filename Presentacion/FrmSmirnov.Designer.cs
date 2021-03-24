@@ -170,7 +170,7 @@
             // 
             // btnGenerar
             // 
-            this.btnGenerar.Location = new System.Drawing.Point(718, 421);
+            this.btnGenerar.Location = new System.Drawing.Point(1085, 423);
             this.btnGenerar.Name = "btnGenerar";
             this.btnGenerar.Size = new System.Drawing.Size(153, 43);
             this.btnGenerar.TabIndex = 3;
@@ -222,7 +222,7 @@
             this.dgvIntervalos.RowHeadersVisible = false;
             this.dgvIntervalos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvIntervalos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvIntervalos.Size = new System.Drawing.Size(608, 392);
+            this.dgvIntervalos.Size = new System.Drawing.Size(565, 392);
             this.dgvIntervalos.TabIndex = 14;
             // 
             // dataGridViewTextBoxColumn3
@@ -288,7 +288,7 @@
             // 
             // btnHistograma
             // 
-            this.btnHistograma.Location = new System.Drawing.Point(661, 421);
+            this.btnHistograma.Location = new System.Drawing.Point(1028, 423);
             this.btnHistograma.Name = "btnHistograma";
             this.btnHistograma.Size = new System.Drawing.Size(51, 43);
             this.btnHistograma.TabIndex = 15;
@@ -301,7 +301,7 @@
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(891, 23);
+            this.chart1.Location = new System.Drawing.Point(834, 23);
             this.chart1.Name = "chart1";
             this.chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
             series1.ChartArea = "ChartArea1";
@@ -312,18 +312,19 @@
             series2.Name = "Fe";
             this.chart1.Series.Add(series1);
             this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(478, 441);
+            this.chart1.Size = new System.Drawing.Size(405, 392);
             this.chart1.TabIndex = 17;
             this.chart1.Text = "chart1";
             title1.Name = "Title1";
             title1.Text = "Histograma Kolmogorov-Smirnov";
             this.chart1.Titles.Add(title1);
+            this.chart1.Click += new System.EventHandler(this.chart1_Click);
             // 
             // FrmSmirnov
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1381, 478);
+            this.ClientSize = new System.Drawing.Size(1251, 478);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.btnHistograma);
             this.Controls.Add(this.dgvIntervalos);
