@@ -84,6 +84,44 @@ namespace SimulacionTP1.Presentacion
             }
 
 
+            validarHipotesis(cantNum, maximo);
+
+        }
+
+        private void validarHipotesis(double n, double maximo)
+        {
+            int i = (int)n;
+            double estPrueba = maximo;
+            double valorCritico = 0;
+            double[] valCriticos = { 0.9750, 0.8418, 0.7076, 0.6239, 0.5632, 0.5192, 0.4834, 0.4542, 0.4300
+            , 0.4092, 0.3912, 0.3754, 0.3614, 0.3489 , 0.3375, 0.3273, 0.3179, 0.3093, 0.3014, 0.2940, 0.2872
+            , 0.2808, 0.2749, 0.2693, 0.2640, 0.2590, 0.2543, 0.2499, 0.2457, 0.2417, 0.2378, 0.2342, 0.2307
+            , 0.2274, 0.2242};
+           
+            if (n > 35)
+            {
+                valorCritico =  Math.Round((1.36 / Math.Sqrt(n)),4);
+
+            }
+            else
+            {
+                valorCritico = valCriticos[i - 1];
+            }
+
+            if (valorCritico > estPrueba)
+            {
+                MessageBox.Show( "Valor Critico = " + valorCritico +
+                    "Estadisitico de prueba = " + estPrueba +
+                    "La hipotesis nula NO SE PUEDE RECHAZAR, con un nivel de significancia" +
+                    "del 0.05");
+            }
+            else
+            {
+                MessageBox.Show("Valor Critico = " + valorCritico +
+                    "Estadisitico de prueba = " + estPrueba +
+                    "  La hipotesis nula  SE PUEDE RECHAZAR, con un nivel de significancia" +
+                    "del 0.05");
+            }
         }
 
         private void dgvtablaNumeros_CellContentClick(object sender, System.Windows.Forms.DataGridViewCellEventArgs e)
@@ -100,5 +138,6 @@ namespace SimulacionTP1.Presentacion
         {
 
         }
+
     }
 }
