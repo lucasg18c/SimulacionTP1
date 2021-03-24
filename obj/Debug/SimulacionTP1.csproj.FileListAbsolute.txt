@@ -40,3 +40,17 @@ D:\Alvaro\UTN\4to Año Sistemas\SIM\Trabajos practicos\TP1\SimulacionTP1\obj\Deb
 D:\Alvaro\UTN\4to Año Sistemas\SIM\Trabajos practicos\TP1\SimulacionTP1\obj\Debug\SimulacionTP1.csproj.CoreCompileInputs.cache
 D:\Alvaro\UTN\4to Año Sistemas\SIM\Trabajos practicos\TP1\SimulacionTP1\obj\Debug\SimulacionTP1.exe
 D:\Alvaro\UTN\4to Año Sistemas\SIM\Trabajos practicos\TP1\SimulacionTP1\obj\Debug\SimulacionTP1.pdb
+C:\Users\Nico\Desktop\tp simulacion\SimulacionTP1\bin\Debug\SimulacionTP1.exe.config
+C:\Users\Nico\Desktop\tp simulacion\SimulacionTP1\bin\Debug\SimulacionTP1.exe
+C:\Users\Nico\Desktop\tp simulacion\SimulacionTP1\bin\Debug\SimulacionTP1.pdb
+C:\Users\Nico\Desktop\tp simulacion\SimulacionTP1\obj\Debug\SimulacionTP1.csprojAssemblyReference.cache
+C:\Users\Nico\Desktop\tp simulacion\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.FrmBase.resources
+C:\Users\Nico\Desktop\tp simulacion\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.FrmJiCuadrado.resources
+C:\Users\Nico\Desktop\tp simulacion\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.FrmMain.resources
+C:\Users\Nico\Desktop\tp simulacion\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.FrmNumerosAleatorios.resources
+C:\Users\Nico\Desktop\tp simulacion\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.FrmSmirnov.resources
+C:\Users\Nico\Desktop\tp simulacion\SimulacionTP1\obj\Debug\SimulacionTP1.Properties.Resources.resources
+C:\Users\Nico\Desktop\tp simulacion\SimulacionTP1\obj\Debug\SimulacionTP1.csproj.GenerateResource.cache
+C:\Users\Nico\Desktop\tp simulacion\SimulacionTP1\obj\Debug\SimulacionTP1.csproj.CoreCompileInputs.cache
+C:\Users\Nico\Desktop\tp simulacion\SimulacionTP1\obj\Debug\SimulacionTP1.exe
+C:\Users\Nico\Desktop\tp simulacion\SimulacionTP1\obj\Debug\SimulacionTP1.pdb
