@@ -5,7 +5,7 @@ namespace SimulacionTP1.Presentacion
 {
     public partial class FrmSmirnov : FrmBase
     {
-        
+
         public FrmSmirnov()
         {
             InitializeComponent();
@@ -41,26 +41,42 @@ namespace SimulacionTP1.Presentacion
             double count2 = valorIntervalo;
             double intervaloInferior = 0;
             double intervaloSuperior = valorIntervalo;
+            double acumPo = 0;
+            double acumPe = 0;
+            double maximo = 0;
+
             for (int i2 = 1; i2 <= cantInt; i2++)
             {
+
                 int count3 = 0;
                 for (int i3 = 0; i3 <= (cantNum - 1); i3++)
                 {
                     double var = double.Parse(dgvTabla.Rows[i3].Cells[1].Value.ToString());
 
-                    if (intervaloInferior <= var && intervaloSuperior > var )
+                    if (intervaloInferior <= var && intervaloSuperior > var)
                     {
                         count3 = count3 + 1;
                     }
 
                 }
-                dgvIntervalos.Rows.Add(Math.Round(count, 4), Math.Round(count2, 4), count3, totalIntervalos, Math.Round(count3 / cantNum, 4), Math.Round(totalIntervalos / cantNum, 4));
+
+                double abs = Math.Round(Math.Abs(acumPo - acumPe), 4);
+                acumPo = Math.Round(count3 / cantNum, 4) + acumPo;
+                acumPe = Math.Round((totalIntervalos / cantNum), 4) + acumPe;
+                dgvIntervalos.Rows.Add(Math.Round(count, 4), Math.Round(count2, 4), count3, totalIntervalos,
+                    Math.Round(count3 / cantNum, 4), Math.Round(totalIntervalos / cantNum, 4), acumPo, acumPe,
+                    abs,maximo);
+
+                if(abs >= maximo)
+                {
+                    maximo = abs;
+                }
                 count = count + valorIntervalo;
                 count2 = count2 + valorIntervalo;
 
                 intervaloInferior = intervaloInferior + valorIntervalo;
                 intervaloSuperior = intervaloSuperior + valorIntervalo;
-                
+
             }
 
 
