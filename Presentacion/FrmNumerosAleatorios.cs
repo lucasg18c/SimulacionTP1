@@ -114,12 +114,14 @@ namespace SimulacionTP1.Presentacion
         private void txtX_TextChanged(object sender, EventArgs e)
         {
             DatoModificado();
+            
         }
 
         private void txtM_TextChanged(object sender, EventArgs e)
         {
             DatoModificado();
             //txtG.Clear();
+            //txtC.Text = generador.CalcularC(txtM.Valor).ToString;
         }
 
         private void txtA_TextChanged(object sender, EventArgs e)

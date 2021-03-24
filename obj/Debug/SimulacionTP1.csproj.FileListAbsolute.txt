@@ -12,3 +12,17 @@ C:\Users\lucas\source\repos\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.F
 C:\Users\lucas\source\repos\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.FrmMain.resources
 C:\Users\lucas\source\repos\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.FrmNumerosAleatorios.resources
 C:\Users\lucas\source\repos\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.FrmSmirnov.resources
+C:\Users\franc\OneDrive\Escritorio\SimulacionTP1\bin\Debug\SimulacionTP1.exe.config
+C:\Users\franc\OneDrive\Escritorio\SimulacionTP1\bin\Debug\SimulacionTP1.exe
+C:\Users\franc\OneDrive\Escritorio\SimulacionTP1\bin\Debug\SimulacionTP1.pdb
+C:\Users\franc\OneDrive\Escritorio\SimulacionTP1\obj\Debug\SimulacionTP1.csprojAssemblyReference.cache
+C:\Users\franc\OneDrive\Escritorio\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.FrmBase.resources
+C:\Users\franc\OneDrive\Escritorio\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.FrmJiCuadrado.resources
+C:\Users\franc\OneDrive\Escritorio\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.FrmMain.resources
+C:\Users\franc\OneDrive\Escritorio\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.FrmNumerosAleatorios.resources
+C:\Users\franc\OneDrive\Escritorio\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.FrmSmirnov.resources
+C:\Users\franc\OneDrive\Escritorio\SimulacionTP1\obj\Debug\SimulacionTP1.Properties.Resources.resources
+C:\Users\franc\OneDrive\Escritorio\SimulacionTP1\obj\Debug\SimulacionTP1.csproj.GenerateResource.cache
+C:\Users\franc\OneDrive\Escritorio\SimulacionTP1\obj\Debug\SimulacionTP1.csproj.CoreCompileInputs.cache
+C:\Users\franc\OneDrive\Escritorio\SimulacionTP1\obj\Debug\SimulacionTP1.exe
+C:\Users\franc\OneDrive\Escritorio\SimulacionTP1\obj\Debug\SimulacionTP1.pdb
