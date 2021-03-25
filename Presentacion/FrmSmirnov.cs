@@ -107,6 +107,8 @@ namespace SimulacionTP1.Presentacion
             , 0.4092, 0.3912, 0.3754, 0.3614, 0.3489 , 0.3375, 0.3273, 0.3179, 0.3093, 0.3014, 0.2940, 0.2872
             , 0.2808, 0.2749, 0.2693, 0.2640, 0.2590, 0.2543, 0.2499, 0.2457, 0.2417, 0.2378, 0.2342, 0.2307
             , 0.2274, 0.2242};
+
+            string mensajeResultado = "";
            
             if (n > 35)
             {
@@ -120,18 +122,25 @@ namespace SimulacionTP1.Presentacion
 
             if (valorCritico > estPrueba)
             {
-                MessageBox.Show( "Valor Critico = " + valorCritico +
-                    "Estadisitico de prueba = " + estPrueba +
-                    "La hipotesis nula NO SE PUEDE RECHAZAR, con un nivel de significancia" +
-                    "del 0.05");
+                mensajeResultado = "Valor Critico = " + valorCritico +
+                    "\nEstadisitico de prueba = " + estPrueba +
+                    "\nLa hipotesis nula  NO SE PUEDE RECHAZAR, con un nivel de significancia" +
+                    "del 0.05";
+                mostrarResultado(mensajeResultado);
             }
             else
             {
-                MessageBox.Show("Valor Critico = " + valorCritico +
-                    "Estadisitico de prueba = " + estPrueba +
-                    "  La hipotesis nula  SE PUEDE RECHAZAR, con un nivel de significancia" +
-                    "del 0.05");
+                mensajeResultado = "Valor Critico = " + valorCritico +
+                    "\nEstadisitico de prueba = " + estPrueba +
+                    "\nLa hipotesis nula  SE PUEDE RECHAZAR, con un nivel de significancia" +
+                    "del 0.05";
+                mostrarResultado(mensajeResultado);
             }
+        }
+
+        private void mostrarResultado(string msj)
+        {
+            MessageBox.Show(msj,"RESULTADO DE LA HIPOTESIS",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
 
         private void dgvtablaNumeros_CellContentClick(object sender, System.Windows.Forms.DataGridViewCellEventArgs e)
