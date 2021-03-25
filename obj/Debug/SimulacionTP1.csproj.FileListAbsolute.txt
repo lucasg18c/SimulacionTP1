@@ -68,3 +68,17 @@ C:\Users\franc\OneDrive\Escritorio\SIMoRI\SimulacionTP1\obj\Debug\SimulacionTP1.
 C:\Users\franc\OneDrive\Escritorio\SIMoRI\SimulacionTP1\obj\Debug\SimulacionTP1.csproj.CoreCompileInputs.cache
 C:\Users\franc\OneDrive\Escritorio\SIMoRI\SimulacionTP1\obj\Debug\SimulacionTP1.exe
 C:\Users\franc\OneDrive\Escritorio\SIMoRI\SimulacionTP1\obj\Debug\SimulacionTP1.pdb
+E:\Proyectos\Repos\bin\Debug\SimulacionTP1.exe.config
+E:\Proyectos\Repos\bin\Debug\SimulacionTP1.exe
+E:\Proyectos\Repos\bin\Debug\SimulacionTP1.pdb
+E:\Proyectos\Repos\obj\Debug\SimulacionTP1.csprojAssemblyReference.cache
+E:\Proyectos\Repos\obj\Debug\SimulacionTP1.Presentacion.FrmBase.resources
+E:\Proyectos\Repos\obj\Debug\SimulacionTP1.Presentacion.FrmJiCuadrado.resources
+E:\Proyectos\Repos\obj\Debug\SimulacionTP1.Presentacion.FrmMain.resources
+E:\Proyectos\Repos\obj\Debug\SimulacionTP1.Presentacion.FrmNumerosAleatorios.resources
+E:\Proyectos\Repos\obj\Debug\SimulacionTP1.Presentacion.FrmSmirnov.resources
+E:\Proyectos\Repos\obj\Debug\SimulacionTP1.Properties.Resources.resources
+E:\Proyectos\Repos\obj\Debug\SimulacionTP1.csproj.GenerateResource.cache
+E:\Proyectos\Repos\obj\Debug\SimulacionTP1.csproj.CoreCompileInputs.cache
+E:\Proyectos\Repos\obj\Debug\SimulacionTP1.exe
+E:\Proyectos\Repos\obj\Debug\SimulacionTP1.pdb
