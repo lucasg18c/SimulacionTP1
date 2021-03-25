@@ -23,5 +23,10 @@ namespace SimulacionTP1.Presentacion
         {
             Abrir(new FrmSmirnov());
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
