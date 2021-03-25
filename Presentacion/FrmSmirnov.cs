@@ -24,9 +24,6 @@ namespace SimulacionTP1.Presentacion
             chart1.Titles.Add("Histograma Kolmogorov-Smirnov");
             NumerosAleatorios(cantNum);
             Intervalos(cantInt, cantNum);
-
-            
-
         }
         public void NumerosAleatorios(double cantNum)
         {
@@ -67,8 +64,8 @@ namespace SimulacionTP1.Presentacion
 
                 }
 
-                chart1.Series["Fo"].Points.AddXY(i2, count3);
-                chart1.Series["Fe"].Points.AddXY(i2, totalIntervalos);
+                chart1.Series["Fo"].Points.AddXY(count2, count3);
+                chart1.Series["Fe"].Points.AddXY(count2, totalIntervalos);
 
                 acumPo = Math.Round(count3 / cantNum, 4) + acumPo;
                 acumPe = Math.Round((totalIntervalos / cantNum), 4) + acumPe;
@@ -81,16 +78,16 @@ namespace SimulacionTP1.Presentacion
 
                 dgvIntervalos.Rows.Add(Math.Round(count, 4), Math.Round(count2, 4), count3, totalIntervalos,
                     Math.Round(count3 / cantNum, 4), Math.Round(totalIntervalos / cantNum, 4), acumPo, acumPe,
-                    abs,maximo);
+                    abs, maximo);
 
-                
+
                 count = count + valorIntervalo;
                 count2 = count2 + valorIntervalo;
 
                 intervaloInferior = intervaloInferior + valorIntervalo;
                 intervaloSuperior = intervaloSuperior + valorIntervalo;
 
-                
+
             }
 
 
@@ -109,10 +106,10 @@ namespace SimulacionTP1.Presentacion
             , 0.2274, 0.2242};
 
             string mensajeResultado = "";
-           
+
             if (n > 35)
             {
-                valorCritico =  Math.Round((1.36 / Math.Sqrt(n)),4);
+                valorCritico = Math.Round((1.36 / Math.Sqrt(n)), 4);
 
             }
             else
@@ -125,7 +122,7 @@ namespace SimulacionTP1.Presentacion
                 mensajeResultado = "Valor Critico = " + valorCritico +
                     "\nEstadisitico de prueba = " + estPrueba +
                     "\nLa hipotesis nula  NO SE PUEDE RECHAZAR, con un nivel de significancia" +
-                    "del 0.05";
+                    " del 0.05";
                 mostrarResultado(mensajeResultado);
             }
             else
@@ -140,7 +137,7 @@ namespace SimulacionTP1.Presentacion
 
         private void mostrarResultado(string msj)
         {
-            MessageBox.Show(msj,"RESULTADO DE LA HIPOTESIS",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            MessageBox.Show(msj, "RESULTADO DE LA HIPOTESIS", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void dgvtablaNumeros_CellContentClick(object sender, System.Windows.Forms.DataGridViewCellEventArgs e)
