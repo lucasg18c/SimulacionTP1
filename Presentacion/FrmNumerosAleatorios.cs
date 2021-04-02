@@ -17,7 +17,7 @@ namespace SimulacionTP1.Presentacion
         private void btnGenerar_click(object sender, EventArgs e)
         {
             double[] nums;
-            ulong x0 = txtX.Valor,
+            int x0 = txtX.Valor,
                 m = txtM.Valor,
                 a = txtA.Valor,
                 c = txtC.Valor;
@@ -30,7 +30,7 @@ namespace SimulacionTP1.Presentacion
                     nums = generador.Generar(x0, m, a, c);
                 else
                     nums = new double[] { generador.GenerarSiguiente(
-                        (ulong)Convert.ToInt64( Convert.ToDouble( tablaNumeros.Rows[tablaNumeros.Rows.Count - 1].Cells[1].Value.ToString()) * m), 
+                        Convert.ToInt32( Convert.ToDouble( tablaNumeros.Rows[tablaNumeros.Rows.Count - 1].Cells[1].Value.ToString()) * m), 
                         m, 
                         a, 
                         c) };

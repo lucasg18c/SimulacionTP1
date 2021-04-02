@@ -5,7 +5,7 @@ namespace SimulacionTP1.Presentacion.ControlesUsuario
 {
     public class NumTextBox : TextBox
     {
-        public ulong Valor { get { return valor(); } }
+        public int Valor { get { return ObtenerValor(); } }
 
         public NumTextBox()
         {
@@ -28,12 +28,12 @@ namespace SimulacionTP1.Presentacion.ControlesUsuario
             //}
         }
 
-        private ulong valor()
+        private int ObtenerValor()
         {
             if (Text.Length == 0) return 0;
             try
             {
-                return (ulong)Convert.ToInt64(Text);
+                return Convert.ToInt32(Text);
             }
             catch (Exception)
             {

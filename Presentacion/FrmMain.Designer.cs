@@ -128,7 +128,7 @@
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMain";
-            this.Text = "TP1 Simulación | Reartes - Slavik - ";
+            this.Text = "TP1 Simulación | Cosci - Folli - Lerda - Lozada - Reartes - Slavik";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

@@ -47,6 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modelo\ConteoFrecuencia.cs" />
+    <Compile Include="Modelo\PruebasBondad\PruebaBondad.cs" />
+    <Compile Include="Modelo\PruebasBondad\PruebaJiCuadrado.cs" />
     <Compile Include="Presentacion\ControlesUsuario\NumTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -85,6 +88,7 @@
     <Compile Include="Servicios\GeneradorBase.cs" />
     <Compile Include="Servicios\GeneradorLineal.cs" />
     <Compile Include="Servicios\GeneradorMultiplicativo.cs" />
+    <Compile Include="Servicios\GestorJiCuadrado.cs" />
     <EmbeddedResource Include="Presentacion\FrmBase.resx">
       <DependentUpon>FrmBase.cs</DependentUpon>
     </EmbeddedResource>

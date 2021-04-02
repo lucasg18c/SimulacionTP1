@@ -41,18 +41,17 @@
             this.tablaNumeros = new System.Windows.Forms.DataGridView();
             this.iteracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtCan = new System.Windows.Forms.TextBox();
-            this.txtInter = new System.Windows.Forms.TextBox();
             this.gdrDesde = new System.Windows.Forms.DataGridView();
             this.desde = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ne = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.c = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.c2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.histo = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnReiniciar = new System.Windows.Forms.Button();
+            this.txtInter = new SimulacionTP1.Presentacion.ControlesUsuario.NumTextBox();
+            this.txtCan = new SimulacionTP1.Presentacion.ControlesUsuario.NumTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.tablaNumeros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gdrDesde)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.histo)).BeginInit();
@@ -61,14 +60,14 @@
             // 
             // btnGenerar
             // 
-            this.btnGenerar.Location = new System.Drawing.Point(1104, 418);
+            this.btnGenerar.Location = new System.Drawing.Point(1104, 428);
             this.btnGenerar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnGenerar.Name = "btnGenerar";
             this.btnGenerar.Size = new System.Drawing.Size(129, 47);
             this.btnGenerar.TabIndex = 21;
             this.btnGenerar.Text = "Generar";
             this.btnGenerar.UseVisualStyleBackColor = true;
-            this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
+            this.btnGenerar.Click += new System.EventHandler(this.ClickBtnGenerar);
             // 
             // label1
             // 
@@ -130,7 +129,7 @@
             // 
             // iteracion
             // 
-            this.iteracion.HeaderText = "Iteracion";
+            this.iteracion.HeaderText = "Iteración";
             this.iteracion.Name = "iteracion";
             this.iteracion.ReadOnly = true;
             // 
@@ -139,22 +138,6 @@
             this.serie.HeaderText = "Serie";
             this.serie.Name = "serie";
             this.serie.ReadOnly = true;
-            // 
-            // txtCan
-            // 
-            this.txtCan.Location = new System.Drawing.Point(10, 65);
-            this.txtCan.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtCan.Name = "txtCan";
-            this.txtCan.Size = new System.Drawing.Size(157, 25);
-            this.txtCan.TabIndex = 22;
-            // 
-            // txtInter
-            // 
-            this.txtInter.Location = new System.Drawing.Point(10, 129);
-            this.txtInter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtInter.Name = "txtInter";
-            this.txtInter.Size = new System.Drawing.Size(157, 25);
-            this.txtInter.TabIndex = 23;
             // 
             // gdrDesde
             // 
@@ -172,13 +155,13 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gdrDesde.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.gdrDesde.ColumnHeadersHeight = 30;
+            this.gdrDesde.ColumnHeadersHeight = 40;
             this.gdrDesde.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.gdrDesde.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.desde,
             this.hasta,
-            this.NO,
-            this.Ne,
+            this.fo,
+            this.fe,
             this.c,
             this.c2});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -212,17 +195,17 @@
             this.hasta.Name = "hasta";
             this.hasta.ReadOnly = true;
             // 
-            // NO
+            // fo
             // 
-            this.NO.HeaderText = "Nros obt";
-            this.NO.Name = "NO";
-            this.NO.ReadOnly = true;
+            this.fo.HeaderText = "F. Observada";
+            this.fo.Name = "fo";
+            this.fo.ReadOnly = true;
             // 
-            // Ne
+            // fe
             // 
-            this.Ne.HeaderText = "Nros esp";
-            this.Ne.Name = "Ne";
-            this.Ne.ReadOnly = true;
+            this.fe.HeaderText = "F. Esperada";
+            this.fe.Name = "fe";
+            this.fe.ReadOnly = true;
             // 
             // c
             // 
@@ -255,10 +238,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtInter);
             this.groupBox1.Controls.Add(this.txtCan);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.txtInter);
             this.groupBox1.Controls.Add(this.tablaNumeros);
             this.groupBox1.Location = new System.Drawing.Point(14, 16);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -269,17 +252,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos ";
             // 
-            // btnReiniciar
+            // txtInter
             // 
-            this.btnReiniciar.Enabled = false;
-            this.btnReiniciar.Location = new System.Drawing.Point(967, 418);
-            this.btnReiniciar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnReiniciar.Name = "btnReiniciar";
-            this.btnReiniciar.Size = new System.Drawing.Size(115, 47);
-            this.btnReiniciar.TabIndex = 27;
-            this.btnReiniciar.Text = "Reiniciar";
-            this.btnReiniciar.UseVisualStyleBackColor = true;
-            this.btnReiniciar.Click += new System.EventHandler(this.btnReiniciar_Click);
+            this.txtInter.Location = new System.Drawing.Point(13, 129);
+            this.txtInter.MaxLength = 3;
+            this.txtInter.Name = "txtInter";
+            this.txtInter.ShortcutsEnabled = false;
+            this.txtInter.Size = new System.Drawing.Size(181, 25);
+            this.txtInter.TabIndex = 25;
+            // 
+            // txtCan
+            // 
+            this.txtCan.Location = new System.Drawing.Point(13, 64);
+            this.txtCan.MaxLength = 6;
+            this.txtCan.Name = "txtCan";
+            this.txtCan.ShortcutsEnabled = false;
+            this.txtCan.Size = new System.Drawing.Size(181, 25);
+            this.txtCan.TabIndex = 24;
             // 
             // FrmJiCuadrado
             // 
@@ -287,15 +276,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1247, 490);
-            this.Controls.Add(this.btnReiniciar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.histo);
             this.Controls.Add(this.gdrDesde);
             this.Controls.Add(this.btnGenerar);
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "FrmJiCuadrado";
-            this.Text = "FrmJiCuadrado";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Text = "Prueba de Bondad Ji Cuadrado";
             ((System.ComponentModel.ISupportInitialize)(this.tablaNumeros)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gdrDesde)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.histo)).EndInit();
@@ -311,20 +298,19 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView tablaNumeros;
-        private System.Windows.Forms.TextBox txtCan;
-        private System.Windows.Forms.TextBox txtInter;
         private System.Windows.Forms.DataGridView gdrDesde;
         private System.Windows.Forms.DataVisualization.Charting.Chart histo;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn iteracion;
         private System.Windows.Forms.DataGridViewTextBoxColumn serie;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private ControlesUsuario.NumTextBox txtCan;
+        private ControlesUsuario.NumTextBox txtInter;
         private System.Windows.Forms.DataGridViewTextBoxColumn desde;
         private System.Windows.Forms.DataGridViewTextBoxColumn hasta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ne;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fe;
         private System.Windows.Forms.DataGridViewTextBoxColumn c;
         private System.Windows.Forms.DataGridViewTextBoxColumn c2;
-        private System.Windows.Forms.Button btnReiniciar;
     }
 }
 

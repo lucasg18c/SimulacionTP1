@@ -26,7 +26,20 @@ namespace SimulacionTP1.Presentacion
 
         public void MostrarError(string mensaje)
         {
-            MessageBox.Show(mensaje, "Ocurrió un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(
+                mensaje, 
+                "Ocurrió un error",
+                MessageBoxButtons.OK, 
+                MessageBoxIcon.Error);
+        }
+
+        public void MostrarInformacion(string mensaje, string titulo)
+        {
+            MessageBox.Show(
+                mensaje,
+                titulo,
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
         }
     }
 }
