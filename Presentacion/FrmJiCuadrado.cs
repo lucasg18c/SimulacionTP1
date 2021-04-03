@@ -4,24 +4,24 @@ using System;
 
 namespace SimulacionTP1.Presentacion
 {
-    public partial class FrmJiCuadrado : FrmBase
+    public partial class FrmJiCuadrado : FrmBase, IFrmPruebaBondad
     {
-        private readonly GestorJiCuadrado gestor; 
+        private readonly GestorPruebaBondad gestor; 
 
         public FrmJiCuadrado()
         {
             InitializeComponent();
-            gestor = new GestorJiCuadrado(this);
+            gestor = new GestorPruebaBondad(this);
         }
 
-        public long GetCantidadIntervalos()
+        public int GetCantidadIntervalos()
         {
-            return txtInter.Valor;
+            return txtCantidadIntervalos.Valor;
         }
 
-        public long GetCantidadNumeros()
+        public int GetCantidadNumeros()
         {
-            return txtCan.Valor;
+            return txtCantidadNumeros.Valor;
         }
 
         public void ClickBtnGenerar(object sender, EventArgs e)
@@ -31,6 +31,7 @@ namespace SimulacionTP1.Presentacion
 
         public void MostrarHistograma(ConteoFrecuencia[] conteos, int frecuenciaEsperada)
         {
+            LimpiarHistograma();
             foreach (ConteoFrecuencia conteoFrecuencia in conteos)
             {
                 histo.Series["Fo"].Points.AddXY( conteoFrecuencia.GetIntervalo(), conteoFrecuencia.GetConteo());
@@ -46,7 +47,7 @@ namespace SimulacionTP1.Presentacion
                 gdrDesde.Rows.Add(fila);
         }
 
-        public void PrepararHistograma()
+        public void LimpiarHistograma()
         {
             histo.Series.Clear();
             histo.Titles.Clear();
@@ -55,7 +56,7 @@ namespace SimulacionTP1.Presentacion
             histo.Titles.Add("Relación entre Frecuencia observada y esperada");
         }
 
-        public void MostrarGrilla(string[] serie)
+        public void MostrarSerieAleatoria(string[] serie)
         {
             tablaNumeros.Rows.Clear();
             for (int i = 0; i < serie.Length; i++)

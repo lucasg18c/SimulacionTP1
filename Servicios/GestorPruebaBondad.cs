@@ -4,12 +4,12 @@ using System;
 
 namespace SimulacionTP1.Servicios
 {
-    public class GestorJiCuadrado
+    public class GestorPruebaBondad
     {
-        private readonly FrmJiCuadrado form;
+        private readonly IFrmPruebaBondad form;
         private PruebaBondad pruebaBondad;
 
-        public GestorJiCuadrado(FrmJiCuadrado form)
+        public GestorPruebaBondad(IFrmPruebaBondad form)
         {
           this.form = form;
         }
@@ -18,7 +18,7 @@ namespace SimulacionTP1.Servicios
         {
             try
             {
-                long cantidadNumeros, cantidadIntervalos;
+                int cantidadNumeros, cantidadIntervalos;
                 double[] serie;
 
                 cantidadNumeros = form.GetCantidadNumeros();
@@ -27,24 +27,32 @@ namespace SimulacionTP1.Servicios
                 Validar(cantidadNumeros, cantidadIntervalos);
                 serie = GenerarSerieAleatoria(cantidadNumeros);
 
-                pruebaBondad = new PruebaJiCuadrado();
-                pruebaBondad.Calcular(serie, (int)cantidadIntervalos);
+                pruebaBondad = InstanciarPruebaBondad();
+                pruebaBondad.Calcular(serie, cantidadIntervalos);
 
-                form.PrepararHistograma();
-                form.MostrarGrilla(MostrarSerie(serie));
-
+                form.MostrarSerieAleatoria(MostrarSerie(serie));
+                
                 form.MostrarHistograma(
                     pruebaBondad.GetFrecuenciasObservadas(),
-                    pruebaBondad.GetFrecuenciasEsperadas()
+                    pruebaBondad.GetFrecuenciaEsperada()
                 );
 
                 form.MostrarProcedimiento(pruebaBondad.GetProcedimiento());
-                form.MostrarInformacion(pruebaBondad.GetConclusion(), "Resultado");
+                form.MostrarInformacion(pruebaBondad.GetConclusion(), "RESULTADO DE LA HIPOTESIS");
             }
             catch(Exception e)
             {
                 form.MostrarError(e.Message);
             }
+        }
+
+        private PruebaBondad InstanciarPruebaBondad()
+        {
+            if (typeof(FrmJiCuadrado).IsInstanceOfType(form))
+                return new PruebaJiCuadrado();
+
+            else
+                return new PruebaKS();
         }
 
         private string[] MostrarSerie(double[] serie)
@@ -58,23 +66,23 @@ namespace SimulacionTP1.Servicios
             return serieString;
         }
 
-        private double[] GenerarSerieAleatoria(long cantidadNumeros)
+        private double[] GenerarSerieAleatoria(int cantidadNumeros)
         {
             double[] num = new double[cantidadNumeros];
-            Random ran = new Random();
+            Random r = new Random();
             
-            for (int i = 0; i < num.Length; i++)
-                num[i] = ran.NextDouble();
+            for (int i = 0; i < cantidadNumeros; i++)
+                num[i] = r.NextDouble();
             
             return num;
         }
 
-        private void Validar(long numeros, long intervalos)
+        private void Validar(int numeros, int intervalos)
         {
             if (numeros <= 0)
                 throw new ApplicationException("La cantidad de números a generar es inválida.");
 
-            if (intervalos <= 0 || intervalos >= 110)
+            if (intervalos <= 1 || intervalos >= 110)
                 throw new ApplicationException("La cantidad de intervalos es inválida.");
         }
     }

@@ -17,19 +17,18 @@ namespace SimulacionTP1.Modelo.PruebasBondad
         protected override double[] CalcularFila(int iteracion, double[] previa)
         {
             double[] fila = new double[6];
-            int frecuenciaEsperada, frecuenciaObservada;
-            double acumulada;
+            double frecuenciaEsperada, frecuenciaObservada, acumulada;
 
             if (previa != null)
             {
                 fila[0] = previa[1];
-                frecuenciaEsperada = (int) previa[3];
+                frecuenciaEsperada = previa[3];
                 acumulada = previa[5];
             }
             else
             {
-                fila[0] = (double)iteracion / GetCantidadIntervalos();
-                frecuenciaEsperada = GetFrecuenciasEsperadas();
+                fila[0] = 0;
+                frecuenciaEsperada = GetFrecuenciaEsperada();
                 acumulada = 0;
             }
 
@@ -44,7 +43,7 @@ namespace SimulacionTP1.Modelo.PruebasBondad
             return fila;
         }
 
-        private double CalcularC(int frecuenciaObservada, int frecuenciaEsperada)
+        private double CalcularC(double frecuenciaObservada, double frecuenciaEsperada)
         {
             return Math.Pow(frecuenciaEsperada - frecuenciaObservada, 2) / frecuenciaEsperada;
         }
@@ -54,7 +53,7 @@ namespace SimulacionTP1.Modelo.PruebasBondad
             int gradosLibertad = GetCantidadIntervalos() - 1;
 
             if (gradosLibertad <= 30)
-                return valoresCriticos[gradosLibertad];
+                return valoresCriticos[gradosLibertad - 1];
 
             gradosLibertad /= 10;
             return valoresCriticosGrandes[gradosLibertad];

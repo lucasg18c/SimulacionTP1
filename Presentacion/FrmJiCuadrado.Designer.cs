@@ -50,8 +50,8 @@
             this.c2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.histo = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtInter = new SimulacionTP1.Presentacion.ControlesUsuario.NumTextBox();
-            this.txtCan = new SimulacionTP1.Presentacion.ControlesUsuario.NumTextBox();
+            this.txtCantidadIntervalos = new SimulacionTP1.Presentacion.ControlesUsuario.NumTextBox();
+            this.txtCantidadNumeros = new SimulacionTP1.Presentacion.ControlesUsuario.NumTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.tablaNumeros)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gdrDesde)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.histo)).BeginInit();
@@ -238,8 +238,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtInter);
-            this.groupBox1.Controls.Add(this.txtCan);
+            this.groupBox1.Controls.Add(this.txtCantidadIntervalos);
+            this.groupBox1.Controls.Add(this.txtCantidadNumeros);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.tablaNumeros);
@@ -254,21 +254,21 @@
             // 
             // txtInter
             // 
-            this.txtInter.Location = new System.Drawing.Point(13, 129);
-            this.txtInter.MaxLength = 3;
-            this.txtInter.Name = "txtInter";
-            this.txtInter.ShortcutsEnabled = false;
-            this.txtInter.Size = new System.Drawing.Size(181, 25);
-            this.txtInter.TabIndex = 25;
+            this.txtCantidadIntervalos.Location = new System.Drawing.Point(13, 129);
+            this.txtCantidadIntervalos.MaxLength = 3;
+            this.txtCantidadIntervalos.Name = "txtInter";
+            this.txtCantidadIntervalos.ShortcutsEnabled = false;
+            this.txtCantidadIntervalos.Size = new System.Drawing.Size(181, 25);
+            this.txtCantidadIntervalos.TabIndex = 25;
             // 
             // txtCan
             // 
-            this.txtCan.Location = new System.Drawing.Point(13, 64);
-            this.txtCan.MaxLength = 6;
-            this.txtCan.Name = "txtCan";
-            this.txtCan.ShortcutsEnabled = false;
-            this.txtCan.Size = new System.Drawing.Size(181, 25);
-            this.txtCan.TabIndex = 24;
+            this.txtCantidadNumeros.Location = new System.Drawing.Point(13, 64);
+            this.txtCantidadNumeros.MaxLength = 6;
+            this.txtCantidadNumeros.Name = "txtCan";
+            this.txtCantidadNumeros.ShortcutsEnabled = false;
+            this.txtCantidadNumeros.Size = new System.Drawing.Size(181, 25);
+            this.txtCantidadNumeros.TabIndex = 24;
             // 
             // FrmJiCuadrado
             // 
@@ -303,8 +303,8 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridViewTextBoxColumn iteracion;
         private System.Windows.Forms.DataGridViewTextBoxColumn serie;
-        private ControlesUsuario.NumTextBox txtCan;
-        private ControlesUsuario.NumTextBox txtInter;
+        private ControlesUsuario.NumTextBox txtCantidadNumeros;
+        private ControlesUsuario.NumTextBox txtCantidadIntervalos;
         private System.Windows.Forms.DataGridViewTextBoxColumn desde;
         private System.Windows.Forms.DataGridViewTextBoxColumn hasta;
         private System.Windows.Forms.DataGridViewTextBoxColumn fo;

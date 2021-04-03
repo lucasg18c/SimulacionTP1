@@ -11,7 +11,6 @@ C:\Users\lucas\source\repos\SimulacionTP1\obj\Debug\SimulacionTP1.pdb
 C:\Users\lucas\source\repos\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.FrmJiCuadrado.resources
 C:\Users\lucas\source\repos\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.FrmMain.resources
 C:\Users\lucas\source\repos\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.FrmNumerosAleatorios.resources
-C:\Users\lucas\source\repos\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.FrmSmirnov.resources
 C:\Users\franc\OneDrive\Escritorio\SimulacionTP1\bin\Debug\SimulacionTP1.exe.config
 C:\Users\franc\OneDrive\Escritorio\SimulacionTP1\bin\Debug\SimulacionTP1.exe
 C:\Users\franc\OneDrive\Escritorio\SimulacionTP1\bin\Debug\SimulacionTP1.pdb
@@ -82,3 +81,4 @@ E:\Proyectos\Repos\obj\Debug\SimulacionTP1.csproj.GenerateResource.cache
 E:\Proyectos\Repos\obj\Debug\SimulacionTP1.csproj.CoreCompileInputs.cache
 E:\Proyectos\Repos\obj\Debug\SimulacionTP1.exe
 E:\Proyectos\Repos\obj\Debug\SimulacionTP1.pdb
+C:\Users\lucas\source\repos\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.FrmKS.resources

@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SimulacionTP1.Modelo
+﻿namespace SimulacionTP1.Modelo
 {
     public class ConteoFrecuencia
     {
-        private double intervalo;
-        private int conteo;
+        private readonly double intervalo;
+        private readonly int conteo;
 
         public ConteoFrecuencia(double intervalo, int conteo)
         {

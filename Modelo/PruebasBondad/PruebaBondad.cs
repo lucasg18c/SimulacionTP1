@@ -40,17 +40,29 @@ namespace SimulacionTP1.Modelo.PruebasBondad
 
         private void EvaluarHipotesisNula()
         {
-            if (GetEstadisticoPrueba() <= GetValorCritico())
-                conclusion = 
-                    $"La prueba no puede ser rechazada, el valor crítico {GetValorCritico()} " +
-                    $"es mayor al estadístico de prueba (C): {GetEstadisticoPrueba()}";
+            double estadisticoPrueba, valorCritico;
+
+            estadisticoPrueba = GetEstadisticoPrueba();
+            valorCritico = GetValorCritico();
+
+            if (estadisticoPrueba <= valorCritico)
+                conclusion =
+                    $"Valor Critico = {valorCritico}" +
+                    $"\nEstadisitico de prueba = {estadisticoPrueba}" + 
+                    "\nLa hipotesis nula  NO SE PUEDE RECHAZAR, con un nivel de significancia del 0.05";
             else
                 conclusion =
-                    $"La prueba ha sido rechazada, el valor crítico {GetValorCritico()} " +
-                    $"es menor al estadístico de prueba (C): {GetEstadisticoPrueba()}";
+                    $"Valor Critico = {valorCritico}" +
+                    $"\nEstadisitico de prueba = {estadisticoPrueba}" +
+                    "\nLa hipotesis nula  SE PUEDE RECHAZAR, con un nivel de significancia del 0.05";
         }
 
-        public int GetFrecuenciasEsperadas()
+        protected int GetTamanioSerie()
+        {
+            return serie.Length;
+        }
+
+        public int GetFrecuenciaEsperada()
         {
             if (serie.Length < cantidadIntervalos) return 1;
             return serie.Length / cantidadIntervalos;
@@ -112,6 +124,7 @@ namespace SimulacionTP1.Modelo.PruebasBondad
         {
             procedimiento = new double[cantidadIntervalos][];
             procedimiento[0] = CalcularFila(0, null);
+            Redondear(procedimiento[0]);
 
             for (int i = 1; i < cantidadIntervalos; i++)
             {
@@ -133,7 +146,7 @@ namespace SimulacionTP1.Modelo.PruebasBondad
 
             foreach (double numero in serie)
             {
-                indiceIntervalo = (int) Math.Truncate(numero * cantidadIntervalos);
+                indiceIntervalo = (int) (numero * cantidadIntervalos);
                 conteos[indiceIntervalo]++;
             }
         }
