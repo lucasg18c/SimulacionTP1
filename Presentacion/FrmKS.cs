@@ -5,7 +5,7 @@ namespace SimulacionTP1.Presentacion
 {
     public partial class FrmKS : FrmBase, IFrmPruebaBondad
     {
-        private GestorPruebaBondad gestor;
+        private readonly GestorPruebaBondad gestor;
 
         public FrmKS()
         {

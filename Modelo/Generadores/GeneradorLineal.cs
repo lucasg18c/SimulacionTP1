@@ -9,15 +9,15 @@ namespace SimulacionTP1.Servicios
             return a * x + c;
         }
 
-        public override string CalcularA(int k)
+        public override int CalcularA(int k)
         {
-            return (1 + 4 * k).ToString();
+            return 1 + 4 * k;
         }
 
 
         protected override void ValidarC(int c)
         {
-            if (c <= 0) throw new ApplicationException("Valor de constante aditiva inválido");
+            if (c <= 0) throw new ApplicationException("El valor de C es inválido.");
         }
     }
 }

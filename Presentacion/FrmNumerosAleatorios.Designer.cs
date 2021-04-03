@@ -74,7 +74,8 @@ namespace SimulacionTP1.Presentacion
             this.txtX.ShortcutsEnabled = false;
             this.txtX.Size = new System.Drawing.Size(140, 25);
             this.txtX.TabIndex = 1;
-            this.txtX.TextChanged += new System.EventHandler(this.txtX_TextChanged);
+            this.txtX.Tag = "";
+            this.txtX.TextChanged += new System.EventHandler(this.TextoModificado);
             // 
             // btnGenerar
             // 
@@ -84,7 +85,7 @@ namespace SimulacionTP1.Presentacion
             this.btnGenerar.TabIndex = 2;
             this.btnGenerar.Text = "Generar";
             this.btnGenerar.UseVisualStyleBackColor = true;
-            this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_click);
+            this.btnGenerar.Click += new System.EventHandler(this.ClickBtnGenerar);
             // 
             // txtA
             // 
@@ -94,7 +95,8 @@ namespace SimulacionTP1.Presentacion
             this.txtA.ShortcutsEnabled = false;
             this.txtA.Size = new System.Drawing.Size(140, 25);
             this.txtA.TabIndex = 4;
-            this.txtA.TextChanged += new System.EventHandler(this.txtA_TextChanged);
+            this.txtA.Tag = "";
+            this.txtA.TextChanged += new System.EventHandler(this.TextoModificado);
             // 
             // label2
             // 
@@ -113,7 +115,8 @@ namespace SimulacionTP1.Presentacion
             this.txtC.ShortcutsEnabled = false;
             this.txtC.Size = new System.Drawing.Size(140, 25);
             this.txtC.TabIndex = 6;
-            this.txtC.TextChanged += new System.EventHandler(this.txtC_TextChanged);
+            this.txtC.Tag = "";
+            this.txtC.TextChanged += new System.EventHandler(this.TextoModificado);
             // 
             // label3
             // 
@@ -132,7 +135,8 @@ namespace SimulacionTP1.Presentacion
             this.txtM.ShortcutsEnabled = false;
             this.txtM.Size = new System.Drawing.Size(140, 25);
             this.txtM.TabIndex = 8;
-            this.txtM.TextChanged += new System.EventHandler(this.txtM_TextChanged);
+            this.txtM.Tag = "";
+            this.txtM.TextChanged += new System.EventHandler(this.TextoModificado);
             // 
             // label4
             // 
@@ -168,12 +172,13 @@ namespace SimulacionTP1.Presentacion
             // txtG
             // 
             this.txtG.Location = new System.Drawing.Point(207, 242);
-            this.txtG.MaxLength = 8;
+            this.txtG.MaxLength = 2;
             this.txtG.Name = "txtG";
             this.txtG.ShortcutsEnabled = false;
             this.txtG.Size = new System.Drawing.Size(140, 25);
             this.txtG.TabIndex = 16;
-            this.txtG.TextChanged += new System.EventHandler(this.txtG_TextChanged);
+            this.txtG.Tag = "";
+            this.txtG.TextChanged += new System.EventHandler(this.TextoModificado);
             // 
             // label6
             // 
@@ -192,7 +197,8 @@ namespace SimulacionTP1.Presentacion
             this.txtK.ShortcutsEnabled = false;
             this.txtK.Size = new System.Drawing.Size(140, 25);
             this.txtK.TabIndex = 14;
-            this.txtK.TextChanged += new System.EventHandler(this.txtK_TextChanged);
+            this.txtK.Tag = "";
+            this.txtK.TextChanged += new System.EventHandler(this.TextoModificado);
             // 
             // label5
             // 
@@ -223,7 +229,6 @@ namespace SimulacionTP1.Presentacion
             this.rbMultiplicativo.TabIndex = 11;
             this.rbMultiplicativo.Text = "Congruencial Multiplicativo";
             this.rbMultiplicativo.UseVisualStyleBackColor = true;
-            this.rbMultiplicativo.CheckedChanged += new System.EventHandler(this.rbMultiplicativo_CheckedChanged);
             // 
             // rbLineal
             // 
@@ -236,7 +241,7 @@ namespace SimulacionTP1.Presentacion
             this.rbLineal.TabStop = true;
             this.rbLineal.Text = "Congruencial Lineal";
             this.rbLineal.UseVisualStyleBackColor = true;
-            this.rbLineal.CheckedChanged += new System.EventHandler(this.rbLineal_CheckedChanged);
+            this.rbLineal.CheckedChanged += new System.EventHandler(this.ClickRadioButton);
             // 
             // tablaNumeros
             // 
@@ -301,7 +306,6 @@ namespace SimulacionTP1.Presentacion
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "FrmNumerosAleatorios";
             this.Text = "Números Aleatorios";
-            this.Load += new System.EventHandler(this.FrmNumerosAleatorios_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

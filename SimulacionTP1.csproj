@@ -87,9 +87,10 @@
     <Compile Include="Presentacion\IFrmPruebaBondad.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Servicios\GeneradorBase.cs" />
-    <Compile Include="Servicios\GeneradorLineal.cs" />
-    <Compile Include="Servicios\GeneradorMultiplicativo.cs" />
+    <Compile Include="Modelo\Generadores\GeneradorBase.cs" />
+    <Compile Include="Modelo\Generadores\GeneradorLineal.cs" />
+    <Compile Include="Modelo\Generadores\GeneradorMultiplicativo.cs" />
+    <Compile Include="Servicios\GestorPseudoaleatorios.cs" />
     <Compile Include="Servicios\GestorPruebaBondad.cs" />
     <EmbeddedResource Include="Presentacion\FrmBase.resx">
       <DependentUpon>FrmBase.cs</DependentUpon>

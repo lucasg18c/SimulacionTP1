@@ -6,133 +6,96 @@ namespace SimulacionTP1.Presentacion
 {
     public partial class FrmNumerosAleatorios : FrmBase
     {
-        bool desdeCero = true;
-        GeneradorBase generador;
+        private readonly GestorPseudoaleatorios gestor;
 
         public FrmNumerosAleatorios()
         {
             InitializeComponent();
+            gestor = new GestorPseudoaleatorios(this);
+            tablaNumeros.Columns[0].SortMode = DataGridViewColumnSortMode.NotSortable;
         }
-
-        private void btnGenerar_click(object sender, EventArgs e)
+        private void ClickBtnGenerar(object sender, EventArgs e)
         {
-            double[] nums;
-            int x0 = txtX.Valor,
-                m = txtM.Valor,
-                a = txtA.Valor,
-                c = txtC.Valor;
+            gestor.Generar();
+        }    
 
-            try
+        public void AgregarFila(string valor)
+        {
+            tablaNumeros.Rows.Add(new string[]
             {
-                generador.Validar(x0, m, a, c);
-
-                if (desdeCero)
-                    nums = generador.Generar(x0, m, a, c);
-                else
-                    nums = new double[] { generador.GenerarSiguiente(
-                        Convert.ToInt32( Convert.ToDouble( tablaNumeros.Rows[tablaNumeros.Rows.Count - 1].Cells[1].Value.ToString()) * m), 
-                        m, 
-                        a, 
-                        c) };
-
-                Popular(nums);
-                if (!desdeCero)
-                    ScrollUltimo();
-
-                desdeCero = false;
-            }
-            catch(Exception ex)
-            {
-                MostrarError(ex.Message);
-            }
+                (tablaNumeros.Rows.Count + 1).ToString(),
+                valor
+            });
         }
 
-        private void ScrollUltimo()
+        public void SetA(string valor)
+        {
+            txtA.Text = valor;
+        }
+
+        public void SetM(string valor)
+        {
+            txtM.Text = valor;
+        }
+
+        public int GetX()
+        {
+            return txtX.Valor;
+        }
+
+        public void SetK(string valor)
+        {
+            txtK.Text = valor;
+        }
+
+        public void SetG(string valor)
+        {
+            txtG.Text = valor;
+        }
+
+        public void LimpiarTabla()
+        {
+            tablaNumeros.Rows.Clear();
+        }
+
+        public void IrAlUltimo()
         {
             tablaNumeros.CurrentCell = tablaNumeros.Rows[tablaNumeros.Rows.Count - 1].Cells[0];
         }
 
-        private void Popular(double[] nums)
+        private void ClickRadioButton(object sender, EventArgs e)
         {
-            if (nums.Length == 20) tablaNumeros.Rows.Clear();
-
-            foreach ( double d in nums )
-            { 
-                tablaNumeros.Rows.Add(new string[] { 
-                    (tablaNumeros.Rows.Count + 1).ToString(), 
-                    Math.Round(d, 4).ToString() 
-                });
-            } 
+            gestor.CambiarGenerador();
         }
 
-        private void FrmNumerosAleatorios_Load(object sender, EventArgs e)
+        public int GetM()
         {
-            tablaNumeros.Columns[0].SortMode = DataGridViewColumnSortMode.NotSortable;
-            rbLineal.Checked = true;
-            generador = new GeneradorLineal();
+            return txtM.Valor;
         }
 
-        private void DatoModificado()
+        public int GetC()
         {
-            desdeCero = true;
+            return txtC.Valor;
         }
 
-        private void rbLineal_CheckedChanged(object sender, EventArgs e)
+        public int GetA()
         {
-            DatoModificado();
-            if (rbLineal.Checked) generador = new GeneradorLineal();
+            return txtA.Valor;
         }
 
-        private void rbMultiplicativo_CheckedChanged(object sender, EventArgs e)
+        public int GetK()
         {
-            DatoModificado();
-            if (rbMultiplicativo.Checked) generador = new GeneradorMultiplicativo();
+            return txtK.Valor;
         }
 
-        private void txtK_TextChanged(object sender, EventArgs e)
+        public int GetG()
         {
-            DatoModificado();
-            if (txtK.TextLength == 0)
-            {
-                txtA.Clear();
-                return;
-            }
-            txtA.Text = generador.CalcularA(txtK.Valor);
+            return txtG.Valor;
         }
 
-        private void txtG_TextChanged(object sender, EventArgs e)
+        private void TextoModificado(object sender, EventArgs e)
         {
-            DatoModificado();
-            if (txtG.TextLength == 0)
-            {
-                txtM.Clear();
-                return;
-            }
-            txtM.Text = generador.CalcularM(txtG.Valor);
-        }
-
-        private void txtX_TextChanged(object sender, EventArgs e)
-        {
-            DatoModificado();
-            
-        }
-
-        private void txtM_TextChanged(object sender, EventArgs e)
-        {
-            DatoModificado();
-            //txtG.Clear();
-            //txtC.Text = generador.CalcularC(txtM.Valor).ToString;
-        }
-
-        private void txtA_TextChanged(object sender, EventArgs e)
-        {
-            DatoModificado();
-            //txtK.Clear();
-        }
-
-        private void txtC_TextChanged(object sender, EventArgs e)
-        {
-            DatoModificado();
+            gestor.TextoModificado();
         }
     }
 }

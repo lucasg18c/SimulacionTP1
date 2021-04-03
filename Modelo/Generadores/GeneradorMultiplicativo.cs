@@ -7,9 +7,9 @@
             return a * x;
         }
 
-        public override string CalcularA(int k)
+        public override int CalcularA(int k)
         {
-            return (3 + 8 * k).ToString();
+            return 3 + 8 * k;
         }
 
         protected override void ValidarC(int c)
