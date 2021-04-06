@@ -24,10 +24,10 @@ namespace SimulacionTP1.Presentacion
             return txtCantidadNumeros.Valor;
         }
 
-        public void ClickBtnGenerar(object sender, EventArgs e)
-        {
-            gestor.Generar();
-        }
+        //public void ClickBtnGenerar(object sender, EventArgs e)
+        //{
+        //    gestor.Generar();
+        //}
 
         public void MostrarHistograma(ConteoFrecuencia[] conteos, int frecuenciaEsperada)
         {
@@ -53,7 +53,7 @@ namespace SimulacionTP1.Presentacion
             histo.Titles.Clear();
             histo.Series.Add("Fo");
             histo.Series.Add("Fe");
-            histo.Titles.Add("Relación entre Frecuencia observada y esperada");
+            histo.Titles.Add("Histograma Prueba de Ji-Cuadrada - Relación entre Frecuencia observada y esperada");
         }
 
         public void MostrarSerieAleatoria(string[] serie)
@@ -66,6 +66,11 @@ namespace SimulacionTP1.Presentacion
                     (i + 1).ToString(),
                     serie[i]
                 });  
+        }
+
+        private void ClickBtnGenerar(object sender, EventArgs e)
+        {
+            gestor.Generar();
         }
     }
 }

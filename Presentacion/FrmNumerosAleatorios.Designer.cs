@@ -32,6 +32,7 @@ namespace SimulacionTP1.Presentacion
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNumerosAleatorios));
             this.label1 = new System.Windows.Forms.Label();
             this.txtX = new SimulacionTP1.Presentacion.ControlesUsuario.NumTextBox();
             this.btnGenerar = new System.Windows.Forms.Button();
@@ -60,40 +61,44 @@ namespace SimulacionTP1.Presentacion
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 150);
+            this.label1.Location = new System.Drawing.Point(21, 147);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(31, 17);
+            this.label1.Size = new System.Drawing.Size(34, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Raíz";
             // 
             // txtX
             // 
-            this.txtX.Location = new System.Drawing.Point(22, 169);
+            this.txtX.Location = new System.Drawing.Point(24, 165);
             this.txtX.MaxLength = 8;
             this.txtX.Name = "txtX";
             this.txtX.ShortcutsEnabled = false;
-            this.txtX.Size = new System.Drawing.Size(140, 25);
+            this.txtX.Size = new System.Drawing.Size(140, 22);
             this.txtX.TabIndex = 1;
             this.txtX.Tag = "";
             this.txtX.TextChanged += new System.EventHandler(this.TextoModificado);
             // 
             // btnGenerar
             // 
-            this.btnGenerar.Location = new System.Drawing.Point(126, 430);
+            this.btnGenerar.BackColor = System.Drawing.Color.Black;
+            this.btnGenerar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnGenerar.Location = new System.Drawing.Point(126, 410);
             this.btnGenerar.Name = "btnGenerar";
-            this.btnGenerar.Size = new System.Drawing.Size(153, 43);
+            this.btnGenerar.Size = new System.Drawing.Size(153, 40);
             this.btnGenerar.TabIndex = 2;
             this.btnGenerar.Text = "Generar";
-            this.btnGenerar.UseVisualStyleBackColor = true;
+            this.btnGenerar.UseVisualStyleBackColor = false;
             this.btnGenerar.Click += new System.EventHandler(this.ClickBtnGenerar);
             // 
             // txtA
             // 
-            this.txtA.Location = new System.Drawing.Point(22, 315);
+            this.txtA.Location = new System.Drawing.Point(24, 302);
             this.txtA.MaxLength = 8;
             this.txtA.Name = "txtA";
             this.txtA.ShortcutsEnabled = false;
-            this.txtA.Size = new System.Drawing.Size(140, 25);
+            this.txtA.Size = new System.Drawing.Size(140, 22);
             this.txtA.TabIndex = 4;
             this.txtA.Tag = "";
             this.txtA.TextChanged += new System.EventHandler(this.TextoModificado);
@@ -101,19 +106,19 @@ namespace SimulacionTP1.Presentacion
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 295);
+            this.label2.Location = new System.Drawing.Point(21, 284);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(161, 17);
+            this.label2.Size = new System.Drawing.Size(164, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Constante Multiplicativa (a)";
             // 
             // txtC
             // 
-            this.txtC.Location = new System.Drawing.Point(207, 169);
+            this.txtC.Location = new System.Drawing.Point(209, 165);
             this.txtC.MaxLength = 8;
             this.txtC.Name = "txtC";
             this.txtC.ShortcutsEnabled = false;
-            this.txtC.Size = new System.Drawing.Size(140, 25);
+            this.txtC.Size = new System.Drawing.Size(140, 22);
             this.txtC.TabIndex = 6;
             this.txtC.Tag = "";
             this.txtC.TextChanged += new System.EventHandler(this.TextoModificado);
@@ -121,19 +126,19 @@ namespace SimulacionTP1.Presentacion
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(204, 149);
+            this.label3.Location = new System.Drawing.Point(206, 146);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 17);
+            this.label3.Size = new System.Drawing.Size(127, 16);
             this.label3.TabIndex = 5;
             this.label3.Text = "Constante Aditiva (c)";
             // 
             // txtM
             // 
-            this.txtM.Location = new System.Drawing.Point(207, 315);
+            this.txtM.Location = new System.Drawing.Point(209, 302);
             this.txtM.MaxLength = 8;
             this.txtM.Name = "txtM";
             this.txtM.ShortcutsEnabled = false;
-            this.txtM.Size = new System.Drawing.Size(140, 25);
+            this.txtM.Size = new System.Drawing.Size(140, 22);
             this.txtM.TabIndex = 8;
             this.txtM.Tag = "";
             this.txtM.TextChanged += new System.EventHandler(this.TextoModificado);
@@ -141,9 +146,9 @@ namespace SimulacionTP1.Presentacion
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(204, 296);
+            this.label4.Location = new System.Drawing.Point(206, 285);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 17);
+            this.label4.Size = new System.Drawing.Size(73, 16);
             this.label4.TabIndex = 7;
             this.label4.Text = "Módulo (m)";
             // 
@@ -162,20 +167,21 @@ namespace SimulacionTP1.Presentacion
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtA);
-            this.groupBox1.Location = new System.Drawing.Point(12, 21);
+            this.groupBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(12, 20);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(375, 369);
+            this.groupBox1.Size = new System.Drawing.Size(375, 360);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
             // 
             // txtG
             // 
-            this.txtG.Location = new System.Drawing.Point(207, 242);
+            this.txtG.Location = new System.Drawing.Point(209, 234);
             this.txtG.MaxLength = 2;
             this.txtG.Name = "txtG";
             this.txtG.ShortcutsEnabled = false;
-            this.txtG.Size = new System.Drawing.Size(140, 25);
+            this.txtG.Size = new System.Drawing.Size(140, 22);
             this.txtG.TabIndex = 16;
             this.txtG.Tag = "";
             this.txtG.TextChanged += new System.EventHandler(this.TextoModificado);
@@ -183,19 +189,19 @@ namespace SimulacionTP1.Presentacion
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(204, 222);
+            this.label6.Location = new System.Drawing.Point(206, 215);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(83, 17);
+            this.label6.Size = new System.Drawing.Size(86, 16);
             this.label6.TabIndex = 15;
             this.label6.Text = "Constante (g)";
             // 
             // txtK
             // 
-            this.txtK.Location = new System.Drawing.Point(22, 242);
+            this.txtK.Location = new System.Drawing.Point(24, 234);
             this.txtK.MaxLength = 8;
             this.txtK.Name = "txtK";
             this.txtK.ShortcutsEnabled = false;
-            this.txtK.Size = new System.Drawing.Size(140, 25);
+            this.txtK.Size = new System.Drawing.Size(140, 22);
             this.txtK.TabIndex = 14;
             this.txtK.Tag = "";
             this.txtK.TextChanged += new System.EventHandler(this.TextoModificado);
@@ -203,9 +209,9 @@ namespace SimulacionTP1.Presentacion
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(19, 222);
+            this.label5.Location = new System.Drawing.Point(21, 215);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 17);
+            this.label5.Size = new System.Drawing.Size(86, 16);
             this.label5.TabIndex = 13;
             this.label5.Text = "Constante (k)";
             // 
@@ -213,9 +219,9 @@ namespace SimulacionTP1.Presentacion
             // 
             this.groupBox2.Controls.Add(this.rbMultiplicativo);
             this.groupBox2.Controls.Add(this.rbLineal);
-            this.groupBox2.Location = new System.Drawing.Point(20, 32);
+            this.groupBox2.Location = new System.Drawing.Point(22, 36);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(219, 92);
+            this.groupBox2.Size = new System.Drawing.Size(219, 87);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Método";
@@ -223,9 +229,9 @@ namespace SimulacionTP1.Presentacion
             // rbMultiplicativo
             // 
             this.rbMultiplicativo.AutoSize = true;
-            this.rbMultiplicativo.Location = new System.Drawing.Point(25, 56);
+            this.rbMultiplicativo.Location = new System.Drawing.Point(25, 53);
             this.rbMultiplicativo.Name = "rbMultiplicativo";
-            this.rbMultiplicativo.Size = new System.Drawing.Size(177, 21);
+            this.rbMultiplicativo.Size = new System.Drawing.Size(179, 19);
             this.rbMultiplicativo.TabIndex = 11;
             this.rbMultiplicativo.Text = "Congruencial Multiplicativo";
             this.rbMultiplicativo.UseVisualStyleBackColor = true;
@@ -234,9 +240,9 @@ namespace SimulacionTP1.Presentacion
             // 
             this.rbLineal.AutoSize = true;
             this.rbLineal.Checked = true;
-            this.rbLineal.Location = new System.Drawing.Point(25, 29);
+            this.rbLineal.Location = new System.Drawing.Point(25, 27);
             this.rbLineal.Name = "rbLineal";
-            this.rbLineal.Size = new System.Drawing.Size(136, 21);
+            this.rbLineal.Size = new System.Drawing.Size(139, 19);
             this.rbLineal.TabIndex = 10;
             this.rbLineal.TabStop = true;
             this.rbLineal.Text = "Congruencial Lineal";
@@ -250,11 +256,13 @@ namespace SimulacionTP1.Presentacion
             this.tablaNumeros.AllowUserToResizeColumns = false;
             this.tablaNumeros.AllowUserToResizeRows = false;
             this.tablaNumeros.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tablaNumeros.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.tablaNumeros.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tablaNumeros.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -265,21 +273,22 @@ namespace SimulacionTP1.Presentacion
             this.iteracion,
             this.numeros});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.tablaNumeros.DefaultCellStyle = dataGridViewCellStyle2;
             this.tablaNumeros.EnableHeadersVisualStyles = false;
-            this.tablaNumeros.Location = new System.Drawing.Point(406, 29);
+            this.tablaNumeros.GridColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.tablaNumeros.Location = new System.Drawing.Point(406, 27);
             this.tablaNumeros.MultiSelect = false;
             this.tablaNumeros.Name = "tablaNumeros";
             this.tablaNumeros.ReadOnly = true;
             this.tablaNumeros.RowHeadersVisible = false;
             this.tablaNumeros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.tablaNumeros.Size = new System.Drawing.Size(328, 468);
+            this.tablaNumeros.Size = new System.Drawing.Size(328, 440);
             this.tablaNumeros.TabIndex = 11;
             // 
             // iteracion
@@ -297,12 +306,15 @@ namespace SimulacionTP1.Presentacion
             // 
             // FrmNumerosAleatorios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(746, 511);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(746, 481);
             this.Controls.Add(this.tablaNumeros);
             this.Controls.Add(this.btnGenerar);
             this.Controls.Add(this.groupBox1);
+            this.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "FrmNumerosAleatorios";
             this.Text = "Números Aleatorios";

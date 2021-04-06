@@ -28,5 +28,10 @@ namespace SimulacionTP1.Presentacion
         {
 
         }
+
+        private void panel2_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
+        {
+
+        }
     }
 }

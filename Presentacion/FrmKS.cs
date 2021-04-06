@@ -56,7 +56,9 @@ namespace SimulacionTP1.Presentacion
             histograma.Titles.Clear();
             histograma.Series.Add("Fo");
             histograma.Series.Add("Fe");
-            histograma.Titles.Add("Histograma Kolmogorov-Smirnov");
+            histograma.Titles.Add("Histograma Prueba de Kolmogorov-Smirnov - Relación entre Frecuencia observada y esperada");
+
+
         }
 
         public void MostrarProcedimiento(string[][] procedimiento)

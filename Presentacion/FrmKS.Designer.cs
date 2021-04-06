@@ -34,9 +34,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmKS));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvTabla = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +45,7 @@
             this.txtCantidadNum = new SimulacionTP1.Presentacion.ControlesUsuario.NumTextBox();
             this.btnGenerar = new System.Windows.Forms.Button();
             this.dgvIntervalos = new System.Windows.Forms.DataGridView();
+            this.histograma = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.F0 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,7 +56,6 @@
             this.PeAC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Max = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Maxx = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.histograma = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIntervalos)).BeginInit();
@@ -71,9 +69,10 @@
             this.groupBox1.Controls.Add(this.lblIntervalos);
             this.groupBox1.Controls.Add(this.lblCantidad);
             this.groupBox1.Controls.Add(this.txtCantidadNum);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(12, 11);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(236, 586);
+            this.groupBox1.Size = new System.Drawing.Size(236, 552);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos";
@@ -85,11 +84,13 @@
             this.dgvTabla.AllowUserToResizeColumns = false;
             this.dgvTabla.AllowUserToResizeRows = false;
             this.dgvTabla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTabla.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvTabla.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvTabla.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -101,20 +102,20 @@
             this.dataGridViewTextBoxColumn2});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvTabla.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvTabla.EnableHeadersVisualStyles = false;
-            this.dgvTabla.Location = new System.Drawing.Point(6, 169);
+            this.dgvTabla.Location = new System.Drawing.Point(6, 159);
             this.dgvTabla.MultiSelect = false;
             this.dgvTabla.Name = "dgvTabla";
             this.dgvTabla.ReadOnly = true;
             this.dgvTabla.RowHeadersVisible = false;
             this.dgvTabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvTabla.Size = new System.Drawing.Size(224, 410);
+            this.dgvTabla.Size = new System.Drawing.Size(224, 386);
             this.dgvTabla.TabIndex = 13;
             // 
             // dataGridViewTextBoxColumn1
@@ -132,48 +133,52 @@
             // 
             // txtCantidadInt
             // 
-            this.txtCantidadInt.Location = new System.Drawing.Point(43, 115);
+            this.txtCantidadInt.Location = new System.Drawing.Point(43, 108);
             this.txtCantidadInt.MaxLength = 3;
             this.txtCantidadInt.Name = "txtCantidadInt";
             this.txtCantidadInt.ShortcutsEnabled = false;
-            this.txtCantidadInt.Size = new System.Drawing.Size(140, 25);
+            this.txtCantidadInt.Size = new System.Drawing.Size(140, 22);
             this.txtCantidadInt.TabIndex = 5;
             // 
             // lblIntervalos
             // 
             this.lblIntervalos.AutoSize = true;
-            this.lblIntervalos.Location = new System.Drawing.Point(40, 95);
+            this.lblIntervalos.Location = new System.Drawing.Point(40, 89);
             this.lblIntervalos.Name = "lblIntervalos";
-            this.lblIntervalos.Size = new System.Drawing.Size(137, 17);
+            this.lblIntervalos.Size = new System.Drawing.Size(139, 16);
             this.lblIntervalos.TabIndex = 4;
             this.lblIntervalos.Text = "Cantidad de Intervalos:";
             // 
             // lblCantidad
             // 
             this.lblCantidad.AutoSize = true;
-            this.lblCantidad.Location = new System.Drawing.Point(40, 30);
+            this.lblCantidad.Location = new System.Drawing.Point(40, 28);
             this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(133, 17);
+            this.lblCantidad.Size = new System.Drawing.Size(137, 16);
             this.lblCantidad.TabIndex = 3;
-            this.lblCantidad.Text = "Cantidad de Numeros:";
+            this.lblCantidad.Text = "Cantidad de Números:";
             // 
             // txtCantidadNum
             // 
-            this.txtCantidadNum.Location = new System.Drawing.Point(43, 50);
+            this.txtCantidadNum.Location = new System.Drawing.Point(43, 47);
             this.txtCantidadNum.MaxLength = 6;
             this.txtCantidadNum.Name = "txtCantidadNum";
             this.txtCantidadNum.ShortcutsEnabled = false;
-            this.txtCantidadNum.Size = new System.Drawing.Size(140, 25);
+            this.txtCantidadNum.Size = new System.Drawing.Size(140, 22);
             this.txtCantidadNum.TabIndex = 2;
             // 
             // btnGenerar
             // 
-            this.btnGenerar.Location = new System.Drawing.Point(18, 604);
+            this.btnGenerar.BackColor = System.Drawing.Color.Black;
+            this.btnGenerar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnGenerar.Location = new System.Drawing.Point(18, 568);
             this.btnGenerar.Name = "btnGenerar";
-            this.btnGenerar.Size = new System.Drawing.Size(224, 43);
+            this.btnGenerar.Size = new System.Drawing.Size(224, 40);
             this.btnGenerar.TabIndex = 3;
             this.btnGenerar.Text = "Generar";
-            this.btnGenerar.UseVisualStyleBackColor = true;
+            this.btnGenerar.UseVisualStyleBackColor = false;
             this.btnGenerar.Click += new System.EventHandler(this.ClickBtnGenerar);
             // 
             // dgvIntervalos
@@ -183,16 +188,19 @@
             this.dgvIntervalos.AllowUserToResizeColumns = false;
             this.dgvIntervalos.AllowUserToResizeRows = false;
             this.dgvIntervalos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvIntervalos.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvIntervalos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvIntervalos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvIntervalos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvIntervalos.ColumnHeadersHeight = 30;
+            this.dgvIntervalos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvIntervalos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
@@ -206,22 +214,36 @@
             this.Maxx});
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlDark;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvIntervalos.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvIntervalos.EnableHeadersVisualStyles = false;
-            this.dgvIntervalos.Location = new System.Drawing.Point(263, 23);
+            this.dgvIntervalos.Location = new System.Drawing.Point(263, 22);
             this.dgvIntervalos.MultiSelect = false;
             this.dgvIntervalos.Name = "dgvIntervalos";
             this.dgvIntervalos.ReadOnly = true;
             this.dgvIntervalos.RowHeadersVisible = false;
             this.dgvIntervalos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgvIntervalos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvIntervalos.Size = new System.Drawing.Size(706, 226);
+            this.dgvIntervalos.Size = new System.Drawing.Size(706, 213);
             this.dgvIntervalos.TabIndex = 14;
+            // 
+            // histograma
+            // 
+            this.histograma.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.histograma.BorderlineColor = System.Drawing.Color.Transparent;
+            chartArea1.Name = "ChartArea1";
+            this.histograma.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.histograma.Legends.Add(legend1);
+            this.histograma.Location = new System.Drawing.Point(263, 240);
+            this.histograma.Name = "histograma";
+            this.histograma.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
+            this.histograma.Size = new System.Drawing.Size(706, 374);
+            this.histograma.TabIndex = 17;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -237,7 +259,7 @@
             // 
             // F0
             // 
-            this.F0.HeaderText = "F0";
+            this.F0.HeaderText = "Fo";
             this.F0.Name = "F0";
             this.F0.ReadOnly = true;
             // 
@@ -284,41 +306,21 @@
             this.Maxx.Name = "Maxx";
             this.Maxx.ReadOnly = true;
             // 
-            // histograma
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.histograma.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.histograma.Legends.Add(legend1);
-            this.histograma.Location = new System.Drawing.Point(263, 255);
-            this.histograma.Name = "histograma";
-            this.histograma.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Fo";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Fe";
-            this.histograma.Series.Add(series1);
-            this.histograma.Series.Add(series2);
-            this.histograma.Size = new System.Drawing.Size(706, 397);
-            this.histograma.TabIndex = 17;
-            title1.Name = "Title1";
-            title1.Text = "Histograma Kolmogorov-Smirnov";
-            this.histograma.Titles.Add(title1);
-            // 
             // FrmKS
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(981, 664);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(981, 625);
             this.Controls.Add(this.histograma);
             this.Controls.Add(this.dgvIntervalos);
             this.Controls.Add(this.btnGenerar);
             this.Controls.Add(this.groupBox1);
+            this.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.Name = "FrmKS";
-            this.Text = "Prueba de Bondad KS";
+            this.Text = "Prueba de Kolmogorov-Smirnov";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTabla)).EndInit();
