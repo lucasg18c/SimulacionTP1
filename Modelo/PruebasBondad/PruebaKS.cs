@@ -11,6 +11,11 @@ namespace SimulacionTP1.Modelo.PruebasBondad
             0.2499, 0.2457, 0.2417, 0.2378, 0.2342, 0.2307, 0.2274, 0.2242
         };
 
+        public override string GetNombre()
+        {
+            return "Kolmogorov Smirnov";
+        }
+
         protected override double[] CalcularFila(int iteracion, double[] previa)
         {
             double[] fila = new double[10];
@@ -56,6 +61,23 @@ namespace SimulacionTP1.Modelo.PruebasBondad
                 return Math.Round(1.36 / Math.Sqrt(n), 4);
 
             return valCriticos[n - 1];  
+        }
+
+        public override string[] GetColumnasProcedimiento()
+        {
+            return new string[]
+            {
+                "Desde",
+                "Hasta",
+                "F. Observadas",
+                "F. Esperadas",
+                "P. Observadas",
+                "P. Esperadas",
+                "P.O. Acumuladas",
+                "P.E. Acumuladas",
+                "|P.E.A - P.O.A|",
+                "max |P.E.A - P.O.A|",
+            };
         }
     }
 }

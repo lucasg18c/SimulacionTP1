@@ -2,7 +2,7 @@
 
 namespace SimulacionTP1.Modelo.PruebasBondad
 {
-    public class PruebaJiCuadrado : PruebaBondad
+    public class PruebaChiCuadrado : PruebaBondad
     {
         private static readonly double[] valoresCriticos = { 
             3.84, 5.99, 7.81, 9.49, 11.1, 12.6, 14.1, 15.5, 16.9, 18.3, 19.7, 
@@ -57,6 +57,24 @@ namespace SimulacionTP1.Modelo.PruebasBondad
 
             gradosLibertad /= 10;
             return valoresCriticosGrandes[gradosLibertad];
+        }
+
+        public override string GetNombre()
+        {
+            return "Chi Cuadrado";
+        }
+
+        public override string[] GetColumnasProcedimiento()
+        {
+            return new string[]
+            {
+                "Desde",
+                "Hasta",
+                "F. Observadas",
+                "F. Esperadas",
+                "C",
+                "C Acumulado"
+            };
         }
     }
 }

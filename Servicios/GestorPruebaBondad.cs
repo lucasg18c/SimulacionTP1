@@ -1,17 +1,31 @@
-﻿using SimulacionTP1.Modelo.PruebasBondad;
+﻿using SimulacionTP1.Modelo;
+using SimulacionTP1.Modelo.PruebasBondad;
 using SimulacionTP1.Presentacion;
 using System;
+using System.Windows.Forms;
 
 namespace SimulacionTP1.Servicios
 {
     public class GestorPruebaBondad
     {
-        private readonly IFrmPruebaBondad form;
+        private readonly FrmPruebaBondad form;
         private PruebaBondad pruebaBondad;
+        private double[] serie;
 
-        public GestorPruebaBondad(IFrmPruebaBondad form)
+        public GestorPruebaBondad(FrmPruebaBondad form, FrmPruebaBondad.Pruebas prueba)
         {
-          this.form = form;
+            this.form = form;
+            ElegirPruebaBondad(prueba);
+            form.SetTitulo(pruebaBondad.GetNombre());
+            form.SetColumnasTabla(pruebaBondad.GetColumnasProcedimiento());
+        }
+
+        private void ElegirPruebaBondad(FrmPruebaBondad.Pruebas prueba)
+        {
+            if (prueba == FrmPruebaBondad.Pruebas.ChiCuadrado)
+                pruebaBondad = new PruebaChiCuadrado();
+            else
+                pruebaBondad = new PruebaKS();
         }
 
         public void Generar()
@@ -19,26 +33,31 @@ namespace SimulacionTP1.Servicios
             try
             {
                 int cantidadNumeros, cantidadIntervalos;
-                double[] serie;
+
+                Cursor.Current = Cursors.WaitCursor;
 
                 cantidadNumeros = form.GetCantidadNumeros();
-                cantidadIntervalos = form.GetCantidadIntervalos();
-
+                cantidadIntervalos = form.GetIntervalos();
                 Validar(cantidadNumeros, cantidadIntervalos);
+
                 serie = GenerarSerieAleatoria(cantidadNumeros);
 
-                pruebaBondad = InstanciarPruebaBondad();
                 pruebaBondad.Calcular(serie, cantidadIntervalos);
 
-                form.MostrarSerieAleatoria(MostrarSerie(serie));
-                
-                form.MostrarHistograma(
-                    pruebaBondad.GetFrecuenciasObservadas(),
-                    pruebaBondad.GetFrecuenciaEsperada()
-                );
+                form.MostrarSerieAleatoria(MostrarSerie());
+
+                MostrarHistograma();
 
                 form.MostrarProcedimiento(pruebaBondad.GetProcedimiento());
-                form.MostrarInformacion(pruebaBondad.GetConclusion(), "RESULTADO DE LA HIPOTESIS");
+                form.SetValoresResultado(pruebaBondad.GetValoresResultado());
+
+                if (pruebaBondad.ResultadoPositivo())
+                    form.ResultadoPositivo();
+                else
+                    form.ResultadoNegativo();
+
+                Cursor.Current = Cursors.Default;
+                form.HabilitarCopiado(true);
             }
             catch(Exception e)
             {
@@ -46,24 +65,32 @@ namespace SimulacionTP1.Servicios
             }
         }
 
-        private PruebaBondad InstanciarPruebaBondad()
+        private void MostrarHistograma()
         {
-            if (typeof(FrmJiCuadrado).IsInstanceOfType(form))
-                return new PruebaJiCuadrado();
+            ConteoFrecuencia[] conteo = pruebaBondad.GetFrecuenciasObservadas();
+            double frecuenciaEsperada = pruebaBondad.GetFrecuenciaEsperada();
 
-            else
-                return new PruebaKS();
+            form.LimpiarHistograma();
+            
+            foreach (ConteoFrecuencia fo in conteo)
+                form.MostrarHistograma(Math.Round(fo.Desde, 4), fo.Cantidad, frecuenciaEsperada); 
         }
 
-        private string[] MostrarSerie(double[] serie)
+        private string MostrarSerie()
         {
-            int n = serie.Length;
-            string[] serieString = new string[n];
+            string serieString = "";
 
-            for (int i = 0; i < n; i++)
-                serieString[i] = Math.Round(serie[i], 4).ToString();
-
+            foreach (double d in serie)
+            {
+                serieString += Math.Round(d, 4).ToString();
+                serieString += " \t";
+            }
             return serieString;
+        }
+
+        public void Copiar()
+        {
+            Clipboard.SetText(MostrarSerie());
         }
 
         private double[] GenerarSerieAleatoria(int cantidadNumeros)

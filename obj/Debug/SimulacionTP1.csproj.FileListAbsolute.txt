@@ -8,7 +8,6 @@ C:\Users\lucas\source\repos\SimulacionTP1\bin\Debug\SimulacionTP1.exe
 C:\Users\lucas\source\repos\SimulacionTP1\bin\Debug\SimulacionTP1.pdb
 C:\Users\lucas\source\repos\SimulacionTP1\obj\Debug\SimulacionTP1.exe
 C:\Users\lucas\source\repos\SimulacionTP1\obj\Debug\SimulacionTP1.pdb
-C:\Users\lucas\source\repos\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.FrmJiCuadrado.resources
 C:\Users\lucas\source\repos\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.FrmMain.resources
 C:\Users\lucas\source\repos\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.FrmNumerosAleatorios.resources
 C:\Users\franc\OneDrive\Escritorio\SimulacionTP1\bin\Debug\SimulacionTP1.exe.config
@@ -81,7 +80,6 @@ E:\Proyectos\Repos\obj\Debug\SimulacionTP1.csproj.GenerateResource.cache
 E:\Proyectos\Repos\obj\Debug\SimulacionTP1.csproj.CoreCompileInputs.cache
 E:\Proyectos\Repos\obj\Debug\SimulacionTP1.exe
 E:\Proyectos\Repos\obj\Debug\SimulacionTP1.pdb
-C:\Users\lucas\source\repos\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.FrmKS.resources
 C:\Users\franc\OneDrive\Escritorio\SIMoRI\Nuevo TP1\SimulacionTP1\bin\Debug\SimulacionTP1.exe.config
 C:\Users\franc\OneDrive\Escritorio\SIMoRI\Nuevo TP1\SimulacionTP1\bin\Debug\SimulacionTP1.exe
 C:\Users\franc\OneDrive\Escritorio\SIMoRI\Nuevo TP1\SimulacionTP1\bin\Debug\SimulacionTP1.pdb
@@ -96,3 +94,4 @@ C:\Users\franc\OneDrive\Escritorio\SIMoRI\Nuevo TP1\SimulacionTP1\obj\Debug\Simu
 C:\Users\franc\OneDrive\Escritorio\SIMoRI\Nuevo TP1\SimulacionTP1\obj\Debug\SimulacionTP1.csproj.CoreCompileInputs.cache
 C:\Users\franc\OneDrive\Escritorio\SIMoRI\Nuevo TP1\SimulacionTP1\obj\Debug\SimulacionTP1.exe
 C:\Users\franc\OneDrive\Escritorio\SIMoRI\Nuevo TP1\SimulacionTP1\obj\Debug\SimulacionTP1.pdb
+C:\Users\lucas\source\repos\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.FrmPruebaBondad.resources

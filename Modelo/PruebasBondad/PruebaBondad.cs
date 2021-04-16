@@ -14,8 +14,9 @@ namespace SimulacionTP1.Modelo.PruebasBondad
         private static readonly int DECIMALES_REDONDEO = 4;
 
         protected abstract double[] CalcularFila(int iteracion, double[] previa);
-
         protected abstract double CalcularValorCritico();
+        public abstract string GetNombre();
+        public abstract string[] GetColumnasProcedimiento();
 
         public void Calcular(double[] serie, int cantidadIntervalos)
         {
@@ -57,6 +58,17 @@ namespace SimulacionTP1.Modelo.PruebasBondad
                     "\nLa hipotesis nula  SE PUEDE RECHAZAR, con un nivel de significancia del 0.05";
         }
 
+        public string GetValoresResultado()
+        {
+            return $"Valor Calculado: {Math.Round(GetEstadisticoPrueba(), DECIMALES_REDONDEO)}" +
+                $"       Valor tabulado: {Math.Round(GetValorCritico(), DECIMALES_REDONDEO)}";
+        }
+
+        public bool ResultadoPositivo()
+        {
+            return GetEstadisticoPrueba() <= GetValorCritico();
+        }
+
         protected int GetTamanioSerie()
         {
             return serie.Length;
@@ -73,10 +85,10 @@ namespace SimulacionTP1.Modelo.PruebasBondad
             ConteoFrecuencia[] conteoFrecuencias = new ConteoFrecuencia[cantidadIntervalos];
 
             for (int i = 0; i < cantidadIntervalos; i++)
-                conteoFrecuencias[i] = new ConteoFrecuencia(
-                    (double)i / cantidadIntervalos, 
-                    conteos[i]
-                    );
+                conteoFrecuencias[i] = new ConteoFrecuencia {
+                    Desde = (double)i / cantidadIntervalos,
+                    Cantidad = conteos[i]
+                    };
 
             return conteoFrecuencias;
         }
@@ -141,14 +153,10 @@ namespace SimulacionTP1.Modelo.PruebasBondad
 
         private void ConteoFrecuencias()
         {
-            int indiceIntervalo;
             conteos = new int[cantidadIntervalos];
 
             foreach (double numero in serie)
-            {
-                indiceIntervalo = (int) (numero * cantidadIntervalos);
-                conteos[indiceIntervalo]++;
-            }
+                conteos[ (int) (numero * cantidadIntervalos)]++;            
         }
     }
 }

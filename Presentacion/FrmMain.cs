@@ -9,29 +9,19 @@ namespace SimulacionTP1.Presentacion
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void ClickBtnNumerosAleatorios(object sender, EventArgs e)
         {
             Abrir(new FrmNumerosAleatorios());
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void ClickBtnChiCuadrado(object sender, EventArgs e)
         {
-            Abrir(new FrmJiCuadrado());
+            Abrir(new FrmPruebaBondad(FrmPruebaBondad.Pruebas.ChiCuadrado));
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void ClickBtnKs(object sender, EventArgs e)
         {
-            Abrir(new FrmKS());
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, System.Windows.Forms.PaintEventArgs e)
-        {
-
+            Abrir(new FrmPruebaBondad(FrmPruebaBondad.Pruebas.KS));
         }
     }
 }
