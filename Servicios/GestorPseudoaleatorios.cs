@@ -43,11 +43,24 @@ namespace SimulacionTP1.Servicios
                     datosModificados = false;
 
                     generador.Validar(x, m, a, c, k, g);
+                    //prueba
+                    if (m == 0 && c != 0)
+                    {
+                        calcularPrimerPrimoRelativoDe(c);
+                    }
+                    else
+                    {
+                        if (c != 0)
+                        {
+                            verificarPrimaje(c, m);
+                        }
+                     }
                     UsarBuenasPracticas();
                     form.LimpiarTabla();
                     serie = new List<double>();
                     GenerarYMostrar(CANTIDAD_GENERACION);
                 }
+
                 else
                 {
                     GenerarYMostrar(1);
@@ -66,8 +79,63 @@ namespace SimulacionTP1.Servicios
             }
         }
 
+        private void calcularPrimerPrimoRelativoDe(int c)
+        {
+            for (int i = 3; i < 100; i++)
+            {
+                int a = Math.Max(c, i);
+                int b = Math.Min(c, i);
+                int res;
+                do
+                {
+                    res = b; // guardamos el divisor en el resultado
+                    b = a % b; // Guardamos el resto en el divisor
+                    a = res; // El divisor pasa a dividendo
+                } while (b != 0);
+
+                if (res == 1)
+                {
+                    //son relativamente primos
+                    form.MostrarInformacion("Se calculo un valor, que es primo relativo de C.", "C y M, COMO PRIMOS RELATIVOS");
+                    form.SetM(i);
+                    this.m = i;
+                    break;
+                }
+            }
+        }
+        public void verificarPrimaje(int c, int m)
+        {
+            {
+                int a = Math.Max(c, m);
+                int b = Math.Min(c, m);
+                int res;
+                do
+                {
+                    res = b; // guardamos el divisor en el resultado
+                    b = a % b; // Guardamos el resto en el divisor
+                    a = res; // El divisor pasa a dividendo
+                } while (b != 0);
+
+                if (res == 1)
+                {
+                    //son relativamente primos
+                    form.MostrarInformacion("De lujo!, sus numeros C y M ingresados, son relativamente primos\n" +
+                        "El calculo obtendra la mayor periocicidad", "C y M, COMO PRIMOS RELATIVOS");
+                }
+                else
+                {
+                    // no son relativamente primos
+                    //me gustaria agregar una pregunta si desea calcular un valor de M que sea relativamente primo o dejarlo asi pero ahora pongo esto
+                    form.MostrarInformacion("Sus numeros C y M ingresados, NO son relativamente primos\n" +
+                        "Se calculara un valor de M nuevo que cumpla esta regla...", "C y M, COMO PRIMOS RELATIVOS");
+                    calcularPrimerPrimoRelativoDe(c);
+                }
+            }
+        }
+
         public void UsarBuenasPracticas()
         {
+            // si k es algun valor y a es cero , preguntaremos al user si desea usar la k para calcular a
             if (k != 0)
             {
                 if (a == 0)
@@ -94,7 +162,7 @@ namespace SimulacionTP1.Servicios
 
                 else
                 {
-                    bool res = form.Preguntar($"Desea usar la el valor de \"g\" ({g}) para calcular un nuevo \"m\"?");
+                    bool res = form.Preguntar($"Desea usar la el valor de \"g\" ({g}) para calcular un nuevo \"m\"? (RECOMENDADO)");
                     if (res)
                         CalcularM();
 
@@ -106,6 +174,8 @@ namespace SimulacionTP1.Servicios
                 }
             }
         }
+
+        
 
         public void Exportar()
         {

@@ -25,6 +25,7 @@ namespace SimulacionTP1.Servicios
             if (a <= 0 && k <= 0) 
                 throw new ApplicationException("Debe ingresar un valor válido de A ó K");
 
+
             ValidarC(c);
         }
 

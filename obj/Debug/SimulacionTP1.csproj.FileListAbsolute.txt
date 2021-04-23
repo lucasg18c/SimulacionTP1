@@ -29,10 +29,8 @@ D:\Alvaro\UTN\4to Año Sistemas\SIM\Trabajos practicos\TP1\SimulacionTP1\bin\Deb
 D:\Alvaro\UTN\4to Año Sistemas\SIM\Trabajos practicos\TP1\SimulacionTP1\bin\Debug\SimulacionTP1.pdb
 D:\Alvaro\UTN\4to Año Sistemas\SIM\Trabajos practicos\TP1\SimulacionTP1\obj\Debug\SimulacionTP1.csprojAssemblyReference.cache
 D:\Alvaro\UTN\4to Año Sistemas\SIM\Trabajos practicos\TP1\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.FrmBase.resources
-D:\Alvaro\UTN\4to Año Sistemas\SIM\Trabajos practicos\TP1\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.FrmJiCuadrado.resources
 D:\Alvaro\UTN\4to Año Sistemas\SIM\Trabajos practicos\TP1\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.FrmMain.resources
 D:\Alvaro\UTN\4to Año Sistemas\SIM\Trabajos practicos\TP1\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.FrmNumerosAleatorios.resources
-D:\Alvaro\UTN\4to Año Sistemas\SIM\Trabajos practicos\TP1\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.FrmSmirnov.resources
 D:\Alvaro\UTN\4to Año Sistemas\SIM\Trabajos practicos\TP1\SimulacionTP1\obj\Debug\SimulacionTP1.Properties.Resources.resources
 D:\Alvaro\UTN\4to Año Sistemas\SIM\Trabajos practicos\TP1\SimulacionTP1\obj\Debug\SimulacionTP1.csproj.GenerateResource.cache
 D:\Alvaro\UTN\4to Año Sistemas\SIM\Trabajos practicos\TP1\SimulacionTP1\obj\Debug\SimulacionTP1.csproj.CoreCompileInputs.cache
@@ -97,3 +95,6 @@ C:\Users\franc\OneDrive\Escritorio\SIMoRI\Nuevo TP1\SimulacionTP1\obj\Debug\Simu
 C:\Users\lucas\source\repos\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.FrmPruebaBondad.resources
 C:\Users\lucas\source\repos\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.ControlesUsuario.DatoTxtNum.resources
 C:\Users\lucas\source\repos\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.ControlesUsuario.DatoCombo.resources
+D:\Alvaro\UTN\4to Año Sistemas\SIM\Trabajos practicos\TP1\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.ControlesUsuario.DatoCombo.resources
+D:\Alvaro\UTN\4to Año Sistemas\SIM\Trabajos practicos\TP1\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.ControlesUsuario.DatoTxtNum.resources
+D:\Alvaro\UTN\4to Año Sistemas\SIM\Trabajos practicos\TP1\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.FrmPruebaBondad.resources
