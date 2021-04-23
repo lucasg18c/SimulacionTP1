@@ -28,9 +28,9 @@ namespace SimulacionTP1.Servicios
             ValidarC(c);
         }
 
-        public double CalcularM(int g)
+        public int CalcularM(int g)
         {
-            return Math.Pow(2, g);
+            return (int) Math.Pow(2, g);
         }
 
         public int GetSiguienteSemilla()

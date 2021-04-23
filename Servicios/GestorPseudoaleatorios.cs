@@ -1,5 +1,6 @@
 ﻿using SimulacionTP1.Presentacion;
 using System;
+using System.Collections.Generic;
 
 namespace SimulacionTP1.Servicios
 {
@@ -7,9 +8,10 @@ namespace SimulacionTP1.Servicios
     {
         private readonly FrmNumerosAleatorios form;
         private GeneradorBase generador;
-        private int x, a, c, k, g;
-        private double m;
+        private int x, xIngresado, a, c, k, g, m;
         private bool datosModificados = true;
+        private List<double> serie;
+
         private static readonly int CANTIDAD_GENERACION = 20;
 
         public GestorPseudoaleatorios(FrmNumerosAleatorios form)
@@ -26,48 +28,108 @@ namespace SimulacionTP1.Servicios
                 generador = new GeneradorLineal();
 
             datosModificados = true;
-            CalcularDatos();
+            UsarBuenasPracticas();
         }
 
         public void Generar()
         {
             try
             {
+                form.Esperar(true);
+                GetDatos();
+
                 if (datosModificados)
                 {
                     datosModificados = false;
-                    
-                    GetDatos();
+
                     generador.Validar(x, m, a, c, k, g);
-                    CalcularDatos();
+                    UsarBuenasPracticas();
                     form.LimpiarTabla();
+                    serie = new List<double>();
                     GenerarYMostrar(CANTIDAD_GENERACION);
                 }
                 else
                 {
                     GenerarYMostrar(1);
                     form.IrAlUltimo();
-                }      
+                }
+                form.HabilitarExportar(true);
             }
             catch (Exception e)
             {
                 form.MostrarError(e.Message);
+                form.HabilitarExportar(false);
+            }
+            finally
+            {
+                form.Esperar(false);
             }
         }
 
-        public void CalcularDatos()
+        public void UsarBuenasPracticas()
         {
-            if (k != 0 && a == 0)
+            if (k != 0)
             {
-                a = generador.CalcularA(k);
-                form.SetA(a.ToString());
+                if (a == 0)
+                    CalcularA();
+                
+                else
+                {
+                    bool res = form.Preguntar($"Desea usar la el valor de \"k\" ({k}) para calcular un nuevo \"a\"?");
+                    if (res)
+                        CalcularA();
+
+                    else
+                    {
+                        k = 0;
+                        form.SetK(0);
+                    }
+                }
             }
 
-            if (g != 0 && m == 0)
+            if (g != 0)
             {
-                m = generador.CalcularM(g);
-                form.SetM(m.ToString());
+                if (m == 0)
+                    CalcularM();
+
+                else
+                {
+                    bool res = form.Preguntar($"Desea usar la el valor de \"g\" ({g}) para calcular un nuevo \"m\"?");
+                    if (res)
+                        CalcularM();
+
+                    else
+                    {
+                        g = 0;
+                        form.SetG(0);
+                    }
+                }
             }
+        }
+
+        public void Exportar()
+        {
+            string nums = "";
+            foreach (double d in serie)
+                nums += $"{d}\n";
+
+            form.CopiarPortapapeles(nums);
+        }
+
+        private void CalcularM()
+        {
+            m = generador.CalcularM(g);
+            form.SetM(m);
+            form.SetG(0);
+            g = 0;
+        }
+
+        private void CalcularA()
+        {
+            a = generador.CalcularA(k);
+            form.SetA(a);
+            form.SetK(0);
+            k = 0;
         }
 
         public void TextoModificado()
@@ -77,12 +139,26 @@ namespace SimulacionTP1.Servicios
 
         private void GetDatos()
         {
-            x = form.GetX();
-            m = form.GetM();
-            a = form.GetA();
-            c = form.GetC();
-            k = form.GetK();
-            g = form.GetG();
+            int nX, nM, nA, nC, nK, nG;
+            nX = form.GetX();
+            nM = form.GetM();
+            nA = form.GetA();
+            nC = form.GetC();
+            nK = form.GetK();
+            nG = form.GetG();
+
+            if (xIngresado != nX || nM != m || nA != a || nC != c || nK != k || nG != g)
+            {
+                datosModificados = true;
+                x = nX;
+            }  
+
+            xIngresado = nX;
+            m = nM;
+            a = nA;
+            c = nC;
+            k = nK;
+            g = nG;
         }
 
         private void GenerarYMostrar(int cantidad)
@@ -92,6 +168,7 @@ namespace SimulacionTP1.Servicios
                 generador.Generar(x, m, a, c);
                 x = generador.GetSiguienteSemilla();
                 form.AgregarFila(generador.GetRandom().ToString());
+                serie.Add(generador.GetRandom());
             }
         }
     }

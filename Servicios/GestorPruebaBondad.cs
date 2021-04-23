@@ -34,7 +34,7 @@ namespace SimulacionTP1.Servicios
             {
                 int cantidadNumeros, cantidadIntervalos;
 
-                Cursor.Current = Cursors.WaitCursor;
+                form.Esperar(true);
 
                 cantidadNumeros = form.GetCantidadNumeros();
                 cantidadIntervalos = form.GetIntervalos();
@@ -51,17 +51,18 @@ namespace SimulacionTP1.Servicios
                 form.MostrarProcedimiento(pruebaBondad.GetProcedimiento());
                 form.SetValoresResultado(pruebaBondad.GetValoresResultado());
 
-                if (pruebaBondad.ResultadoPositivo())
-                    form.ResultadoPositivo();
-                else
-                    form.ResultadoNegativo();
+                form.ResultadoExitoso(pruebaBondad.ResultadoPositivo());
 
-                Cursor.Current = Cursors.Default;
-                form.HabilitarCopiado(true);
+                form.HabilitarExportar(true);
             }
             catch(Exception e)
             {
                 form.MostrarError(e.Message);
+                form.HabilitarExportar(false);
+            }
+            finally
+            {
+                form.Esperar(false);
             }
         }
 
@@ -81,16 +82,9 @@ namespace SimulacionTP1.Servicios
             string serieString = "";
 
             foreach (double d in serie)
-            {
-                serieString += Math.Round(d, 4).ToString();
-                serieString += " \t";
-            }
+                serieString += $"{Math.Round(d, 4)}\t";
+            
             return serieString;
-        }
-
-        public void Copiar()
-        {
-            Clipboard.SetText(MostrarSerie());
         }
 
         private double[] GenerarSerieAleatoria(int cantidadNumeros)
@@ -111,6 +105,16 @@ namespace SimulacionTP1.Servicios
 
             if (intervalos <= 1 || intervalos >= 110)
                 throw new ApplicationException("La cantidad de intervalos es inválida.");
+        }
+
+        public void Exportar()
+        {
+            string serieString = "";
+
+            foreach (double d in serie)
+                serieString += $"{Math.Round(d, 4)}\n";
+
+            form.CopiarPortapapeles(serieString);
         }
     }
 }

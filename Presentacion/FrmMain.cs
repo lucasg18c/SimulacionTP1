@@ -23,5 +23,10 @@ namespace SimulacionTP1.Presentacion
         {
             Abrir(new FrmPruebaBondad(FrmPruebaBondad.Pruebas.KS));
         }
+
+        private void ClickBtnVersion(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/lucasg18c/SimulacionTP1");
+        }
     }
 }

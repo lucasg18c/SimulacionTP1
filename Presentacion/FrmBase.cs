@@ -41,5 +41,25 @@ namespace SimulacionTP1.Presentacion
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
         }
+
+        public bool Preguntar(string mensaje)
+        {
+            return DialogResult.Yes == MessageBox.Show(
+                mensaje, 
+                "Elija una opción",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+        }
+
+        public void CopiarPortapapeles(string serie)
+        {
+            Clipboard.SetText(serie);
+            MostrarInformacion("La serie pseudoaleatoria se ha copiado a portapapeles.", "Serie copiada");
+        }
+
+        public void Esperar(bool esperar)
+        {
+            Cursor.Current = esperar ? Cursors.WaitCursor : Cursors.Default;
+        }
     }
 }

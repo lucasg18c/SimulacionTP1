@@ -22,14 +22,9 @@ namespace SimulacionTP1.Presentacion
 
         private void IniciarFormulario()
         {
-            cmbIntervalos.Items.AddRange(new string[] {"5", "10", "15", "20" });
-            cmbIntervalos.SelectedIndex = 1;
-
             lblResultado.Text = "";
             lblValoresResultado.Text = "";
-
             pbResultado.Image = null;
-            HabilitarCopiado(false);
         }
 
         public void SetColumnasTabla(string[] columnas)
@@ -45,24 +40,26 @@ namespace SimulacionTP1.Presentacion
 
         public int GetIntervalos()
         {
-            return Convert.ToInt32(cmbIntervalos.Text.ToString());
+            return cmbIntervalo.Valor;
         }
 
-        public void ResultadoPositivo()
+        public void ResultadoExitoso(bool exito)
         {
-            pbResultado.Image = Properties.Resources.cheque;
-            lblResultado.Text = "No se rechaza la hipótesis nula.";
-        }
-
-        public void ResultadoNegativo()
-        {
-            pbResultado.Image = Properties.Resources.cancelar;
-            lblResultado.Text = "Se rechaza la hipótesis nula.";
+            if (exito)
+            {
+                pbResultado.Image = Properties.Resources.cheque;
+                lblResultado.Text = "No se rechaza la hipótesis nula.";
+            }
+            else
+            {
+                pbResultado.Image = Properties.Resources.cancelar;
+                lblResultado.Text = "Se rechaza la hipótesis nula.";
+            }
         }
 
         public int GetCantidadNumeros()
         {
-            return txtCantidadNumeros.Valor;
+            return txtCantidad.Valor;
         }
 
         public void SetValoresResultado(string resultado)
@@ -76,11 +73,6 @@ namespace SimulacionTP1.Presentacion
             histograma.Series["Fe"].Points.AddXY( x, frecuenciaEsperada);
         }
 
-        public void HabilitarCopiado(bool habilitar)
-        {
-            btnCopiar.Enabled = habilitar;
-        }
-
         public void MostrarProcedimiento(string[][] procedimiento)
         {
             tablaProcedimiento.Rows.Clear();
@@ -91,10 +83,9 @@ namespace SimulacionTP1.Presentacion
 
         public void LimpiarHistograma()
         {
-            histograma.Series.Clear();
+            histograma.Series["Fo"].Points.Clear();
+            histograma.Series["Fe"].Points.Clear();
             histograma.Titles.Clear();
-            histograma.Series.Add("Fo");
-            histograma.Series.Add("Fe");
         }
 
         public void MostrarSerieAleatoria(string serie)
@@ -105,11 +96,31 @@ namespace SimulacionTP1.Presentacion
         private void ClickBtnGenerar(object sender, EventArgs e)
         { 
             gestor.Generar();
+            PrepararVentana();
+        }
+
+        private void PrepararVentana()
+        {
+            lblGUIVacio.Visible = false;
+            pbGUIVacio.Visible = false;
+            tablaProcedimiento.Visible = true;
+            histograma.Visible = true;
+            txtSerie.Visible = true;
         }
 
         private void ClickBtnCopiar(object sender, EventArgs e)
         {
-            gestor.Copiar();
+            gestor.Exportar();
+        }
+
+        private void ClickBtnVolver(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        public void HabilitarExportar(bool habilitar)
+        {
+            btnExportar.Visible = habilitar;
         }
     }
 }

@@ -9,7 +9,6 @@ namespace SimulacionTP1.Modelo.PruebasBondad
         private int[] conteos;
         private double[][] procedimiento;
         private double valorCritico;
-        private string conclusion;
 
         private static readonly int DECIMALES_REDONDEO = 4;
 
@@ -26,7 +25,6 @@ namespace SimulacionTP1.Modelo.PruebasBondad
             ConteoFrecuencias();
             CalcularEstadisticoPrueba();
             valorCritico = CalcularValorCritico();
-            EvaluarHipotesisNula();
         }
 
         protected int GetCantidadIntervalos()
@@ -39,29 +37,10 @@ namespace SimulacionTP1.Modelo.PruebasBondad
             return 1d / cantidadIntervalos;
         }
 
-        private void EvaluarHipotesisNula()
-        {
-            double estadisticoPrueba, valorCritico;
-
-            estadisticoPrueba = GetEstadisticoPrueba();
-            valorCritico = GetValorCritico();
-
-            if (estadisticoPrueba <= valorCritico)
-                conclusion =
-                    $"Valor Critico = {valorCritico}" +
-                    $"\nEstadisitico de prueba = {estadisticoPrueba}" + 
-                    "\nLa hipotesis nula  NO SE PUEDE RECHAZAR, con un nivel de significancia del 0.05";
-            else
-                conclusion =
-                    $"Valor Critico = {valorCritico}" +
-                    $"\nEstadisitico de prueba = {estadisticoPrueba}" +
-                    "\nLa hipotesis nula  SE PUEDE RECHAZAR, con un nivel de significancia del 0.05";
-        }
-
         public string GetValoresResultado()
         {
             return $"Valor Calculado: {Math.Round(GetEstadisticoPrueba(), DECIMALES_REDONDEO)}" +
-                $"       Valor tabulado: {Math.Round(GetValorCritico(), DECIMALES_REDONDEO)}";
+                $"\nValor tabulado: {Math.Round(GetValorCritico(), DECIMALES_REDONDEO)}";
         }
 
         public bool ResultadoPositivo()
@@ -114,11 +93,6 @@ namespace SimulacionTP1.Modelo.PruebasBondad
                 proc[i] = fila;
             }
             return proc;
-        }
-
-        public string GetConclusion()
-        {
-            return conclusion;
         }
 
         private double GetValorCritico()

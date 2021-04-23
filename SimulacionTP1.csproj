@@ -51,6 +51,18 @@
     <Compile Include="Modelo\PruebasBondad\PruebaBondad.cs" />
     <Compile Include="Modelo\PruebasBondad\PruebaChiCuadrado.cs" />
     <Compile Include="Modelo\PruebasBondad\PruebaKS.cs" />
+    <Compile Include="Presentacion\ControlesUsuario\DatoCombo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentacion\ControlesUsuario\DatoCombo.designer.cs">
+      <DependentUpon>DatoCombo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\ControlesUsuario\DatoTxtNum.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Presentacion\ControlesUsuario\DatoTxtNum.designer.cs">
+      <DependentUpon>DatoTxtNum.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\ControlesUsuario\NumTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -85,6 +97,12 @@
     <Compile Include="Modelo\Generadores\GeneradorMultiplicativo.cs" />
     <Compile Include="Servicios\GestorPseudoaleatorios.cs" />
     <Compile Include="Servicios\GestorPruebaBondad.cs" />
+    <EmbeddedResource Include="Presentacion\ControlesUsuario\DatoCombo.resx">
+      <DependentUpon>DatoCombo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\ControlesUsuario\DatoTxtNum.resx">
+      <DependentUpon>DatoTxtNum.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FrmBase.resx">
       <DependentUpon>FrmBase.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,6 +146,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cheque.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dado.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

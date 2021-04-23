@@ -95,3 +95,5 @@ C:\Users\franc\OneDrive\Escritorio\SIMoRI\Nuevo TP1\SimulacionTP1\obj\Debug\Simu
 C:\Users\franc\OneDrive\Escritorio\SIMoRI\Nuevo TP1\SimulacionTP1\obj\Debug\SimulacionTP1.exe
 C:\Users\franc\OneDrive\Escritorio\SIMoRI\Nuevo TP1\SimulacionTP1\obj\Debug\SimulacionTP1.pdb
 C:\Users\lucas\source\repos\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.FrmPruebaBondad.resources
+C:\Users\lucas\source\repos\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.ControlesUsuario.DatoTxtNum.resources
+C:\Users\lucas\source\repos\SimulacionTP1\obj\Debug\SimulacionTP1.Presentacion.ControlesUsuario.DatoCombo.resources

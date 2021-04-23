@@ -69,14 +69,14 @@ namespace SimulacionTP1.Modelo.PruebasBondad
             {
                 "Desde",
                 "Hasta",
-                "F. Observadas",
-                "F. Esperadas",
-                "P. Observadas",
-                "P. Esperadas",
-                "P.O. Acumuladas",
-                "P.E. Acumuladas",
-                "|P.E.A - P.O.A|",
-                "max |P.E.A - P.O.A|",
+                "Fo",
+                "Fe",
+                "Po",
+                "Pe",
+                "PoAc",
+                "PeAc",
+                "|PeAc - PoAc|",
+                "max |PeAc - PoAc|",
             };
         }
     }

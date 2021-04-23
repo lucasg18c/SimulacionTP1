@@ -17,7 +17,15 @@ namespace SimulacionTP1.Presentacion
         private void ClickBtnGenerar(object sender, EventArgs e)
         {
             gestor.Generar();
-        }    
+            PrepararVentana();
+        }
+
+        private void PrepararVentana()
+        {
+            pbGUIVacio.Visible = false;
+            lblGUIVacio.Visible = false;
+            tablaNumeros.Visible = true;
+        }
 
         public void AgregarFila(string valor)
         {
@@ -28,14 +36,14 @@ namespace SimulacionTP1.Presentacion
             });
         }
 
-        public void SetA(string valor)
+        public void SetA(int valor)
         {
-            txtA.Text = valor;
+            txtA.Valor = valor;
         }
 
-        public void SetM(string valor)
+        public void SetM(int valor)
         {
-            txtM.Text = valor;
+            txtM.Valor = valor;
         }
 
         public int GetX()
@@ -43,14 +51,14 @@ namespace SimulacionTP1.Presentacion
             return txtX.Valor;
         }
 
-        public void SetK(string valor)
+        public void SetK(int valor)
         {
-            txtK.Text = valor;
+            txtK.Valor = valor;
         }
 
-        public void SetG(string valor)
+        public void SetG(int valor)
         {
-            txtG.Text = valor;
+            txtG.Valor = valor;
         }
 
         public void LimpiarTabla()
@@ -66,6 +74,7 @@ namespace SimulacionTP1.Presentacion
         private void ClickRadioButton(object sender, EventArgs e)
         {
             gestor.CambiarGenerador();
+            txtC.Visible = !txtC.Visible;
         }
 
         public int GetM()
@@ -93,9 +102,19 @@ namespace SimulacionTP1.Presentacion
             return txtG.Valor;
         }
 
-        private void TextoModificado(object sender, EventArgs e)
+        private void ClickBtnVolver(object sender, EventArgs e)
         {
-            gestor.TextoModificado();
+            Close();
+        }
+
+        private void ClickBtnExportar(object sender, EventArgs e)
+        {
+            gestor.Exportar();
+        }
+
+        public void HabilitarExportar(bool habilitar)
+        {
+            btnExportar.Visible = habilitar;
         }
     }
 }
