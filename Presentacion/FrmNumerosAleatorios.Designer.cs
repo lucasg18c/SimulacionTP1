@@ -104,7 +104,6 @@ namespace SimulacionTP1.Presentacion
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(844, 60);
             this.panel2.TabIndex = 14;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel4
             // 
@@ -203,7 +202,7 @@ namespace SimulacionTP1.Presentacion
             this.txtG.TabIndex = 22;
             this.txtG.Texto = "Valor ( g )";
             this.txtG.TipoDato = SimulacionTP1.Presentacion.ControlesUsuario.NumTextBox.TipoDato.Enteros;
-            this.txtG.Valor = 10;
+            this.txtG.Valor = 0;
             // 
             // txtK
             // 
@@ -221,7 +220,7 @@ namespace SimulacionTP1.Presentacion
             this.txtK.TabIndex = 21;
             this.txtK.Texto = "Valor ( k )";
             this.txtK.TipoDato = SimulacionTP1.Presentacion.ControlesUsuario.NumTextBox.TipoDato.Enteros;
-            this.txtK.Valor = 40;
+            this.txtK.Valor = 0;
             // 
             // txtM
             // 
@@ -239,7 +238,7 @@ namespace SimulacionTP1.Presentacion
             this.txtM.TabIndex = 20;
             this.txtM.Texto = "Módulo ( m )";
             this.txtM.TipoDato = SimulacionTP1.Presentacion.ControlesUsuario.NumTextBox.TipoDato.Enteros;
-            this.txtM.Valor = 0;
+            this.txtM.Valor = 1024;
             // 
             // txtA
             // 
@@ -257,7 +256,7 @@ namespace SimulacionTP1.Presentacion
             this.txtA.TabIndex = 19;
             this.txtA.Texto = "Constante ( a )";
             this.txtA.TipoDato = SimulacionTP1.Presentacion.ControlesUsuario.NumTextBox.TipoDato.Enteros;
-            this.txtA.Valor = 0;
+            this.txtA.Valor = 161;
             // 
             // txtC
             // 
@@ -275,7 +274,7 @@ namespace SimulacionTP1.Presentacion
             this.txtC.TabIndex = 18;
             this.txtC.Texto = "Constante ( c )";
             this.txtC.TipoDato = SimulacionTP1.Presentacion.ControlesUsuario.NumTextBox.TipoDato.Enteros;
-            this.txtC.Valor = 10;
+            this.txtC.Valor = 3;
             // 
             // txtX
             // 

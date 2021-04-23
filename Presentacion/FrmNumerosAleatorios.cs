@@ -117,9 +117,9 @@ namespace SimulacionTP1.Presentacion
             btnExportar.Visible = habilitar;
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
+        public void SetC(int valor)
         {
-
+            txtC.Valor = valor;
         }
     }
 }
