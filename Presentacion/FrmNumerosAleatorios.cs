@@ -27,12 +27,14 @@ namespace SimulacionTP1.Presentacion
             tablaNumeros.Visible = true;
         }
 
-        public void AgregarFila(string valor)
+        public void AgregarFila(string iteracion, string xi, string xi1, string rnd)
         {
             tablaNumeros.Rows.Add(new string[]
             {
-                (tablaNumeros.Rows.Count + 1).ToString(),
-                valor
+                iteracion,
+                xi,
+                xi1,
+                rnd                
             });
         }
 
@@ -120,6 +122,11 @@ namespace SimulacionTP1.Presentacion
         public void SetC(int valor)
         {
             txtC.Valor = valor;
+        }
+
+        public void SetX(int valor)
+        {
+            txtX.Valor = valor;
         }
     }
 }

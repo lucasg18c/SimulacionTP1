@@ -14,10 +14,14 @@ namespace SimulacionTP1.Servicios
             return 1 + 4 * k;
         }
 
-
-        protected override void ValidarC(int c)
+        public override bool NecesitaC()
         {
-            if (c <= 0) throw new ApplicationException("El valor de C es inválido.");
+            return true;
+        }
+
+        public override bool UsaSemillaImpar()
+        {
+            return false;
         }
     }
 }

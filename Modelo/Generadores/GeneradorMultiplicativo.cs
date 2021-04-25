@@ -12,9 +12,14 @@
             return 3 + 8 * k;
         }
 
-        protected override void ValidarC(int c)
+        public override bool NecesitaC()
         {
-            
+            return false;
+        }
+
+        public override bool UsaSemillaImpar()
+        {
+            return true;
         }
     }
 }

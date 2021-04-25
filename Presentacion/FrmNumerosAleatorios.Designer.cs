@@ -57,6 +57,8 @@ namespace SimulacionTP1.Presentacion
             this.panel8 = new System.Windows.Forms.Panel();
             this.tablaNumeros = new System.Windows.Forms.DataGridView();
             this.iteracion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Xi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.xi1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numeros = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pbGUIVacio = new System.Windows.Forms.PictureBox();
             this.lblGUIVacio = new System.Windows.Forms.Label();
@@ -238,7 +240,7 @@ namespace SimulacionTP1.Presentacion
             this.txtM.TabIndex = 20;
             this.txtM.Texto = "Módulo ( m )";
             this.txtM.TipoDato = SimulacionTP1.Presentacion.ControlesUsuario.NumTextBox.TipoDato.Enteros;
-            this.txtM.Valor = 1024;
+            this.txtM.Valor = 8192;
             // 
             // txtA
             // 
@@ -256,7 +258,7 @@ namespace SimulacionTP1.Presentacion
             this.txtA.TabIndex = 19;
             this.txtA.Texto = "Constante ( a )";
             this.txtA.TipoDato = SimulacionTP1.Presentacion.ControlesUsuario.NumTextBox.TipoDato.Enteros;
-            this.txtA.Valor = 161;
+            this.txtA.Valor = 181;
             // 
             // txtC
             // 
@@ -274,7 +276,7 @@ namespace SimulacionTP1.Presentacion
             this.txtC.TabIndex = 18;
             this.txtC.Texto = "Constante ( c )";
             this.txtC.TipoDato = SimulacionTP1.Presentacion.ControlesUsuario.NumTextBox.TipoDato.Enteros;
-            this.txtC.Valor = 3;
+            this.txtC.Valor = 8191;
             // 
             // txtX
             // 
@@ -292,7 +294,7 @@ namespace SimulacionTP1.Presentacion
             this.txtX.TabIndex = 17;
             this.txtX.Texto = "Semilla ( x )";
             this.txtX.TipoDato = SimulacionTP1.Presentacion.ControlesUsuario.NumTextBox.TipoDato.Enteros;
-            this.txtX.Valor = 6;
+            this.txtX.Valor = 571;
             // 
             // panel3
             // 
@@ -386,6 +388,8 @@ namespace SimulacionTP1.Presentacion
             this.tablaNumeros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.tablaNumeros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iteracion,
+            this.Xi,
+            this.xi1,
             this.numeros});
             this.tablaNumeros.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tablaNumeros.EnableHeadersVisualStyles = false;
@@ -416,9 +420,21 @@ namespace SimulacionTP1.Presentacion
             this.iteracion.Name = "iteracion";
             this.iteracion.ReadOnly = true;
             // 
+            // Xi
+            // 
+            this.Xi.HeaderText = "X i";
+            this.Xi.Name = "Xi";
+            this.Xi.ReadOnly = true;
+            // 
+            // xi1
+            // 
+            this.xi1.HeaderText = "X i+1";
+            this.xi1.Name = "xi1";
+            this.xi1.ReadOnly = true;
+            // 
             // numeros
             // 
-            this.numeros.HeaderText = "Números Aleatorios";
+            this.numeros.HeaderText = "RND";
             this.numeros.Name = "numeros";
             this.numeros.ReadOnly = true;
             // 
@@ -504,11 +520,13 @@ namespace SimulacionTP1.Presentacion
         private DatoTxtNum txtX;
         private System.Windows.Forms.Button btnGenerar;
         private System.Windows.Forms.DataGridView tablaNumeros;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iteracion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numeros;
         private System.Windows.Forms.Button btnExportar;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.PictureBox pbGUIVacio;
         private System.Windows.Forms.Label lblGUIVacio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iteracion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Xi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn xi1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numeros;
     }
 }

@@ -6,7 +6,13 @@ namespace SimulacionTP1.Servicios
     {
         private int semilla;
         private decimal random;
+
         private static readonly int DECIMALES_REDONDEO = 4;
+
+        protected abstract int Calcular(int x, int a, int c);
+        public abstract int CalcularA(int k);
+        public abstract bool NecesitaC();
+        public abstract bool UsaSemillaImpar();
 
         public void Generar(int semilla, double modulo, int a, int c)
         {
@@ -14,7 +20,7 @@ namespace SimulacionTP1.Servicios
             random = (decimal) (this.semilla / modulo);            
         }
 
-        public void Validar(int x, double m, int a, int c, int k, int g)
+        public void Validar(int x, double m, int a, int k, int g)
         {
             if (x <= 0) 
                 throw new ApplicationException("El valor de la semilla es inválido");
@@ -24,9 +30,6 @@ namespace SimulacionTP1.Servicios
 
             if (a <= 0 && k <= 0) 
                 throw new ApplicationException("Debe ingresar un valor válido de A ó K");
-
-
-            ValidarC(c);
         }
 
         public int CalcularM(int g)
@@ -43,9 +46,5 @@ namespace SimulacionTP1.Servicios
         {
             return Math.Abs((double) Math.Round(random, DECIMALES_REDONDEO));
         }
-
-        protected abstract void ValidarC(int c);
-        protected abstract int Calcular(int x, int a, int c);
-        public abstract int CalcularA(int k);
     }
 }

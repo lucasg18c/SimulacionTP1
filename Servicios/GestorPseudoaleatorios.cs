@@ -28,7 +28,6 @@ namespace SimulacionTP1.Servicios
                 generador = new GeneradorLineal();
 
             datosModificados = true;
-            UsarBuenasPracticas();
         }
 
         public void Generar()
@@ -42,9 +41,7 @@ namespace SimulacionTP1.Servicios
                 {
                     datosModificados = false;
 
-                    generador.Validar(x, m, a, c, k, g);
-
-                   
+                    generador.Validar(x, m, a, k, g);
                     UsarBuenasPracticas();
                     form.LimpiarTabla();
                     serie = new List<double>();
@@ -69,44 +66,41 @@ namespace SimulacionTP1.Servicios
             }
         }
 
-        // EDIT
-        // Le cambié el nombre (CalcularPrimerPrimoRelativoDe) y saqué el parámetro (c)
-        // Entiendo la idea de plantearlo como un método genérico, y que le pases como parámetro 
-        // lo que usa para calcular (c), pero si ves el código, realmente no es genérico, ni necesita serlo;
-        // solo hace falta que C sea relativamente primo a M
         private void CalcularCPrimo()
         {
             int a, b, res;
 
-            for (int i = 3; i < 100; i++)
+            c = 1;
+            if (m == 1)
             {
+                form.SetC(c);
+                return;
+            }
+            
 
-                // EDIT
-                // Ejecutalo con congruencial multiplicativo :D
-                //Listo error multiplicativo :D
+            for (int i = m - 1; i > 0; i--)
+            {
+                a = m;
+                b = i;
 
-                a = Math.Max(c, i);
-                b = Math.Min(c, i);
                 do
                 {
-                    res = b; // guardamos el divisor en el resultado
-                    b = a % b; // Guardamos el resto en el divisor
-                    a = res; // El divisor pasa a dividendo
-                } while (b != 0);
+                    res = a % b;
+                    a = b;
+                    b = res;
+                }
+                while (b != 0);
 
-                if (res == 1)
+                if (a == 1)
                 {
-                    //son relativamente primos
-
-                    form.SetC(i);
                     c = i;
                     break;
                 }
             }
+
+            form.SetC(c);
         }
 
-        
-        
         public void VerificarPrimaje()
         {
             int a = Math.Max(c, m);
@@ -114,13 +108,13 @@ namespace SimulacionTP1.Servicios
             int res;
             do
             {
-                res = b; // guardamos el divisor en el resultado
-                b = a % b; // Guardamos el resto en el divisor
-                a = res; // El divisor pasa a dividendo
-            } while (b != 0);
-
+                res = b;    // guardamos el divisor en el resultado
+                b = a % b;  // Guardamos el resto en el divisor
+                a = res;    // El divisor pasa a dividendo
+            } 
+            while (b != 0);
            
-            if (res != 1)
+            if (res != 1 || c == 1)
                 
                 if (form.Preguntar("Desea calcular un valor de \"c\" relativamente primo a \"m\"?"))
                     CalcularCPrimo();
@@ -128,12 +122,18 @@ namespace SimulacionTP1.Servicios
 
         public void UsarBuenasPracticas()
         {
-            // si k es algun valor y a es cero , preguntaremos al user si desea usar la k para calcular a
+            if (generador.UsaSemillaImpar() && xIngresado % 2 == 0)
+                if (form.Preguntar("Desea usar una semilla recomendada?"))
+                {
+                    x++;
+                    form.SetX(x);
+                }
+            
             if (k != 0)
             {
                 if (a == 0)
                     CalcularA();
-                
+
                 else
                 {
                     if (form.Preguntar("Desea un valor de \"a\" recomendado?"))
@@ -165,15 +165,14 @@ namespace SimulacionTP1.Servicios
                     }
                 }
             }
-            
-            if (m == 0)
-                CalcularCPrimo();
-            else
-                if (c != 0 )
-                {
+
+            if (generador.NecesitaC())
+            {
+                if (c == 0)
+                    CalcularCPrimo();
+                else
                     VerificarPrimaje();
-                }
-                
+            }
         }  
 
         public void Exportar()
@@ -235,9 +234,14 @@ namespace SimulacionTP1.Servicios
             for (int i = 0; i < cantidad; i++)
             {
                 generador.Generar(x, m, a, c);
-                x = generador.GetSiguienteSemilla();
-                form.AgregarFila(generador.GetRandom().ToString());
                 serie.Add(generador.GetRandom());
+                form.AgregarFila(
+                    serie.Count.ToString(), 
+                    x.ToString(),
+                    generador.GetSiguienteSemilla().ToString(),
+                    generador.GetRandom().ToString());
+
+                x = generador.GetSiguienteSemilla();
             }
         }
     }
