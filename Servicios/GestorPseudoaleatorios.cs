@@ -44,9 +44,7 @@ namespace SimulacionTP1.Servicios
 
                     generador.Validar(x, m, a, c, k, g);
 
-                    // EDIT
-                    // Puse el código sobre c primo en el método UsarBuenasPrácticas, ya que ahí se
-                    // calculan a y m según las buenas praácticas, sería bueno que c también se calcule ahí.
+                   
                     UsarBuenasPracticas();
                     form.LimpiarTabla();
                     serie = new List<double>();
@@ -85,6 +83,7 @@ namespace SimulacionTP1.Servicios
 
                 // EDIT
                 // Ejecutalo con congruencial multiplicativo :D
+                //Listo error multiplicativo :D
 
                 a = Math.Max(c, i);
                 b = Math.Min(c, i);
@@ -99,16 +98,6 @@ namespace SimulacionTP1.Servicios
                 {
                     //son relativamente primos
 
-                    // EDIT
-                    // En este punto ya se habría abierto una ventana preguntando si calcular C, y el usuario dijo si
-                    // Realmente hace falta avisarle que ya se calculó? Si total ya te dió el OK para hacerlo
-                    //form.MostrarInformacion("Se calculo un valor, que es primo relativo de C.", "C y M, COMO PRIMOS RELATIVOS");
-
-                    // EDIT
-                    // Por qué modificás M? No era c lo que hay que calcular?
-
-                    //form.SetM(i);
-                    //m = i;
                     form.SetC(i);
                     c = i;
                     break;
@@ -116,8 +105,8 @@ namespace SimulacionTP1.Servicios
             }
         }
 
-        // EDIT
-        // Saqué los parámtros (c y m), por la misma razón que en el método CalcularCPrimo
+        
+        
         public void VerificarPrimaje()
         {
             int a = Math.Max(c, m);
@@ -130,22 +119,9 @@ namespace SimulacionTP1.Servicios
                 a = res; // El divisor pasa a dividendo
             } while (b != 0);
 
-            // EDIT
-            // Te parece cómodo que CADA VEZ que generés un número te avise que el c está bien ?
-            // No sería más lógico que avise SOLO cuando NO ?
-
-            //if (res == 1)
-            //{
-                //son relativamente primos
-                // 
-                //form.MostrarInformacion("De lujo!, sus numeros C y M ingresados, son relativamente primos\n" +
-                //    "El calculo obtendra la mayor periocicidad", "C y M, COMO PRIMOS RELATIVOS");
-            //}
+           
             if (res != 1)
-                // no son relativamente primos
-                //me gustaria agregar una pregunta si desea calcular un valor de M que sea relativamente primo o dejarlo asi pero ahora pongo esto
-                    
-                // PREGUNTA LISTA
+                
                 if (form.Preguntar("Desea calcular un valor de \"c\" relativamente primo a \"m\"?"))
                     CalcularCPrimo();
         }
@@ -189,29 +165,15 @@ namespace SimulacionTP1.Servicios
                     }
                 }
             }
-            // EDIT
-            // Rearmé los if, por tres motivos:
-            //   1. Si tu if solo ejecuta una línea, no necesita llaves (acorta el archivo y es más fácil de leer)
-            //   2. Se pregunta 2 veces si c != 0; con una vez, alcanza.
-            //   3. Realmente no hace falta ver que c sea != 0, ya que para este punto, ya se validó que no lo sea
-            //     (si vas a implementar que cuando el usuario no ingrese C, este se calcule solo, hay que rearmar esto)
-
-            //if (m == 0 && c != 0)
-            //{
-            //    CalcularCPrimo();
-            //}
-            //else
-            //{
-            //    if (c != 0)
-            //    {
-            //        VerificarPrimaje();
-            //    }
-            //}
-            //prueba
+            
             if (m == 0)
                 CalcularCPrimo();
             else
-                VerificarPrimaje();
+                if (c != 0 )
+                {
+                    VerificarPrimaje();
+                }
+                
         }  
 
         public void Exportar()
